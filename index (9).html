@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вічне життя в благодаті · Eternal Life in Grace</title>
+<meta name="description" content="Незалежний двомовний духовно-освітній портал: Біблія, благодать, вічне життя. Independent bilingual study portal.">
+<style>
+:root{--sky:#3f9bd8;--sky-d:#2a79b3;--sky-l:#e6f4fd;--gold:#d7a019;--gold-d:#a87a08;--gold-l:#fff5d1;--green:#6fb85e;--green-d:#3f8a36;--green-l:#e9f7e3;--yel:#fffbe6;--ink:#213b52;--dim:#5d7387;--line:#d9e7f1;--bg:#fbfdff;--card:#fff;--fs:17px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;overflow:hidden}
+body{font-family:"Segoe UI",Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.5}
+#app{display:flex;flex-direction:column;height:100vh;height:100dvh;max-width:100vw}
+#top{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:8px 10px;background:linear-gradient(180deg,#fff,#f3faff);border-bottom:1px solid var(--line)}
+#top .brand{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:8px;background:none;border:0;padding:4px;font:inherit;color:var(--ink);text-align:left;cursor:pointer}
+#top .brand b{display:block;font-size:14px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.02em}
+#top .brand small{display:block;font-size:10.5px;color:var(--gold-d);letter-spacing:.12em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#top .brand span.t{min-width:0;overflow:hidden}
+.sunico{flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff7c2,#f6c63a 60%,#e9a80f);box-shadow:0 0 0 4px rgba(246,198,58,.22)}
+.iconbtn{flex:0 0 auto;min-width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:18px;color:var(--ink);cursor:pointer}
+.lang{flex:0 0 auto;display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.lang button{border:0;background:none;font:inherit;font-weight:700;font-size:13px;padding:0 10px;height:42px;min-width:46px;color:var(--dim);cursor:pointer}
+.lang button.on{background:var(--sky);color:#fff}
+#scroll{flex:1 1 auto;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;background:linear-gradient(180deg,#f4fbff 0,#fbfdff 240px)}
+#view{max-width:780px;margin:0 auto;padding:14px 14px 28px;font-size:var(--fs)}
+#bnav{flex:0 0 auto;display:flex;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+#bnav button{flex:1 1 0;min-width:0;border:0;background:none;font:inherit;font-size:11px;color:var(--dim);padding:7px 2px 8px;min-height:56px;cursor:pointer}
+#bnav button i{display:block;font-style:normal;font-size:21px;line-height:1.2}
+#bnav button.on{color:var(--sky-d);font-weight:700}
+#bnav button span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em}
+h1{font-size:1.45em}h2{font-size:1.2em;color:var(--sky-d)}h3{font-size:1.02em}
+p{margin:0 0 .8em}
+a{color:var(--sky-d)}
+.hero{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 8px 26px rgba(63,155,216,.18);margin-bottom:14px;background:#cfeaff}
+.hero svg{display:block;width:100%;height:auto}
+.hero .txt{position:absolute;left:0;right:0;top:0;padding:16px 16px 0;text-align:center}
+.hero h1{margin:0;font-size:clamp(20px,6.2vw,34px);color:#1d4e77;letter-spacing:.03em;text-shadow:0 1px 0 #fff,0 0 18px rgba(255,255,255,.9)}
+.hero .en{font-size:clamp(11px,3.2vw,15px);letter-spacing:.3em;color:var(--gold-d);font-weight:700;margin-top:4px;text-shadow:0 0 10px #fff}
+.hero .sub{font-size:clamp(12px,3.5vw,16px);color:#2b5a80;margin-top:8px;text-shadow:0 0 10px #fff,0 0 4px #fff}
+.rays{transform-origin:310px 70px;animation:spin 60s linear infinite}
+.cl1{animation:drift 38s ease-in-out infinite alternate}.cl2{animation:drift 52s ease-in-out infinite alternate-reverse}
+.shim{stroke-dasharray:6 14;animation:flow 5s linear infinite}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 5s ease-in-out infinite alternate}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{from{transform:translateX(-14px)}to{transform:translateX(22px)}}
+@keyframes flow{to{stroke-dashoffset:-40}}
+@keyframes sway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#view>*{animation:fade .35s ease both}
+.calm *,.calm *::before,.calm *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 14px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.big{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:92px;padding:12px 8px;border-radius:18px;border:1px solid var(--line);background:var(--card);font:inherit;font-weight:700;color:var(--ink);text-align:center;cursor:pointer;box-shadow:0 3px 10px rgba(33,59,82,.06);transition:transform .15s,box-shadow .15s}
+.big:active{transform:scale(.97)}
+.big i{font-style:normal;font-size:28px;line-height:1}
+.big.c1{background:linear-gradient(160deg,#fff,var(--sky-l))}.big.c2{background:linear-gradient(160deg,#fff,var(--gold-l))}.big.c3{background:linear-gradient(160deg,#fff,var(--green-l))}
+.card{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 14px;margin:0 0 10px;box-shadow:0 2px 8px rgba(33,59,82,.05)}
+button.card{cursor:pointer}
+button.card:active{background:var(--sky-l)}
+.card .row{display:flex;gap:12px;align-items:flex-start}
+.card .ic{flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:var(--sky-l);display:flex;align-items:center;justify-content:center;font-size:22px}
+.card .bd{flex:1 1 auto;min-width:0}
+.card h3{margin:0 0 3px;overflow-wrap:anywhere}
+.card .meta{font-size:.8em;color:var(--dim);overflow-wrap:anywhere}
+.card p{margin:.35em 0 0;font-size:.93em}
+.cover{flex:0 0 56px;width:56px;height:78px;border-radius:8px 10px 10px 8px;background:linear-gradient(135deg,var(--sky),#8fd0f5);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:inset 5px 0 0 rgba(255,255,255,.35),0 3px 8px rgba(33,59,82,.18)}
+.cover.g{background:linear-gradient(135deg,#f1c74a,#ffe9a3)}.cover.n{background:linear-gradient(135deg,#7cc56c,#c9efbd)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;margin:0 -14px 4px;padding-left:14px;padding-right:14px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;font:inherit;font-size:.86em;color:var(--ink);min-height:42px;cursor:pointer;white-space:nowrap}
+.chip.on{background:var(--sky);border-color:var(--sky);color:#fff;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:46px;padding:10px 18px;border-radius:14px;border:1px solid var(--sky);background:var(--sky);color:#fff;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;margin:0 8px 8px 0}
+.btn.ghost{background:#fff;color:var(--sky-d);border-color:var(--line)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#3b2b00}
+.btn.sm{min-height:44px;min-width:44px;padding:6px 12px;font-size:.86em}
+.btn[disabled]{opacity:.5}
+.verse{margin:0 0 12px;padding:14px 16px;border-radius:16px;background:linear-gradient(160deg,var(--yel),#fff);border:1px solid #f1e2a6;border-left:5px solid var(--gold)}
+.verse p{font-family:Georgia,"Times New Roman",serif;font-size:1.08em;line-height:1.6;margin:0 0 8px}
+.verse footer{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:.8em;color:var(--dim)}
+.verse footer b{color:var(--gold-d);font-size:1.05em}
+.tag{display:inline-block;font-size:.72em;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;background:var(--sky-l);color:var(--sky-d);margin:0 6px 6px 0}
+.tag.q{background:#fde9ef;color:#a3345a}.tag.r{background:var(--sky-l);color:var(--sky-d)}.tag.t{background:var(--green-l);color:var(--green-d)}.tag.a{background:var(--gold-l);color:var(--gold-d)}.tag.w{background:#f0f0f0;color:#666}.tag.b{background:var(--yel);color:var(--gold-d)}
+.note{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 10px;background:#fff}
+.note p{margin:0 0 6px}
+.srcbtn{border:0;background:none;padding:6px 0;font:inherit;font-size:.82em;color:var(--sky-d);text-decoration:underline;text-align:left;cursor:pointer;min-height:36px}
+.pend{border:1px dashed #c9c9c9;border-radius:14px;padding:12px 14px;margin:0 0 10px;color:var(--dim);background:#fafafa;font-size:.92em}
+.sec{margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.sec h2{margin:0}
+.sec:after{content:"";flex:1;height:1px;background:var(--line)}
+.lead{color:var(--dim);margin-bottom:14px}
+.flip{display:block;width:100%;min-height:92px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(160deg,#fff,var(--sky-l));padding:14px;margin:0 0 10px;font:inherit;color:var(--ink);text-align:center;cursor:pointer}
+.flip small{display:block;color:var(--dim);font-size:.74em;margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em}
+.flip.on{background:linear-gradient(160deg,#fff,var(--green-l));font-weight:700}
+.qz{border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:0 0 12px;background:#fff}
+.qz h3{margin-bottom:8px}
+.opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px 12px;margin:0 0 7px;font:inherit;color:var(--ink);min-height:46px;cursor:pointer}
+.opt.sel{border-color:var(--sky);background:var(--sky-l);font-weight:700}
+.opt.ok{border-color:var(--green);background:var(--green-l);font-weight:700}
+.opt.no{border-color:#e7a2a2;background:#fdf0f0}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px}
+.cmp>div{border-radius:14px;padding:12px;border:1px solid var(--line);background:#fff;min-width:0}
+.cmp>div.b{background:linear-gradient(160deg,#fff,var(--green-l));border-color:#cfe8c6}
+.cmp h3{font-size:.95em}
+.cmp ul{margin:0;padding-left:1.1em;font-size:.9em}
+.cmp li{margin-bottom:5px;overflow-wrap:anywhere}
+.bar{height:12px;border-radius:999px;background:var(--line);overflow:hidden;margin:6px 0 14px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:999px;transition:width .4s}
+input[type=text],input[type=search],input[type=date],input[type=url],select,textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px;min-height:46px;margin:0 0 10px}
+textarea{min-height:120px;resize:vertical}
+label{display:block;font-size:.84em;font-weight:700;color:var(--dim);margin:0 0 4px}
+.reader{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px}
+.reader.paper{background:#fffaf0;border-color:#f0e3c4}
+.reader p{font-family:Georgia,"Times New Roman",serif;line-height:1.75;margin:0 0 1em}
+.reader p.ask{font-family:inherit;background:var(--green-l);border-radius:12px;padding:10px 12px;font-size:.94em}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.tools .btn{margin:0}
+.star{border:0;background:none;font-size:22px;line-height:1;min-width:44px;min-height:44px;color:#b9c6d1;cursor:pointer}
+.star.on{color:var(--gold)}
+.headrow{display:flex;align-items:flex-start;gap:6px}.headrow h1{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+.foot{font-size:.78em;color:var(--dim);border-top:1px solid var(--line);margin-top:22px;padding-top:12px;text-align:center}
+.empty{text-align:center;color:var(--dim);padding:22px 10px;border:1px dashed var(--line);border-radius:16px;background:#fff;margin-bottom:10px}
+#toast{position:fixed;left:50%;bottom:74px;transform:translateX(-50%);background:#213b52;color:#fff;border-radius:999px;padding:9px 16px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .25s;max-width:88vw;text-align:center;z-index:9}
+#toast.on{opacity:.95}
+.sw{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:380px){.two{grid-template-columns:1fr}.cmp{grid-template-columns:1fr}}
+ul.pts{margin:.3em 0 .6em;padding-left:1.2em}ul.pts li{margin-bottom:.3em}
+.playing{box-shadow:0 0 0 3px rgba(111,184,94,.35)}
+</style>
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <button class="iconbtn" id="backBtn" aria-label="Back" style="display:none">←</button>
+    <button class="brand" id="brandBtn"><span class="sunico"></span><span class="t"><b id="brandA"></b><small id="brandB"></small></span></button>
+    <div class="lang" role="group" aria-label="Language"><button id="lgUk">🇺🇦 УКР</button><button id="lgEn">🇬🇧 ENG</button></div>
+  </header>
+  <main id="scroll"><div id="view"></div></main>
+  <nav id="bnav">
+    <button data-nav="home"><i>☀️</i><span></span></button>
+    <button data-nav="lib"><i>📖</i><span></span></button>
+    <button data-nav="school"><i>🎓</i><span></span></button>
+    <button data-nav="search"><i>🔎</i><span></span></button>
+    <button data-nav="more"><i>☰</i><span></span></button>
+  </nav>
+</div>
+<div id="toast" role="status"></div>
+<script>
+/* ===== DATA 1: verses, sources, eternal life, Father, grace & law ===== */
+var DB = {};
+
+/* Bible verses. uk = working translation (not an official edition); en = World English Bible (public domain) */
+DB.verses = {
+jn1_17:{ref:["Івана 1:17","John 1:17"],t:["Бо Закон був даний через Мойсея, а благодать і правда прийшли через Ісуса Христа.","For the law was given through Moses. Grace and truth were realized through Jesus Christ."]},
+jn1_18:{ref:["Івана 1:18","John 1:18"],t:["Бога ніхто ніколи не бачив. Єдинородний Син, що в лоні Отця, — Він Його явив.","No one has seen God at any time. The one and only Son, who is in the bosom of the Father, has declared him."]},
+jn3_16:{ref:["Івана 3:16","John 3:16"],t:["Бо так полюбив Бог світ, що дав Свого єдинородного Сина, щоб кожен, хто вірить у Нього, не загинув, але мав вічне життя.","For God so loved the world, that he gave his only born Son, that whoever believes in him should not perish, but have eternal life."]},
+jn3_17:{ref:["Івана 3:17","John 3:17"],t:["Бо Бог не послав Свого Сина у світ, щоб судити світ, але щоб світ через Нього був спасенний.","For God didn’t send his Son into the world to judge the world, but that the world should be saved through him."]},
+jn5_24:{ref:["Івана 5:24","John 5:24"],t:["Істинно кажу вам: хто слухає Моє слово і вірить Тому, Хто послав Мене, має вічне життя і на суд не приходить, але перейшов від смерті до життя.","Most certainly I tell you, he who hears my word and believes him who sent me has eternal life, and doesn’t come into judgment, but has passed out of death into life."]},
+jn6_47:{ref:["Івана 6:47","John 6:47"],t:["Істинно кажу вам: хто вірить у Мене, має вічне життя.","Most certainly, I tell you, he who believes in me has eternal life."]},
+jn10_10:{ref:["Івана 10:10","John 10:10"],t:["Злодій приходить лише для того, щоб красти, вбивати й нищити. Я прийшов, щоб мали життя, і мали його вдосталь.","The thief only comes to steal, kill, and destroy. I came that they may have life, and may have it abundantly."]},
+jn11_25:{ref:["Івана 11:25–26","John 11:25–26"],t:["Ісус сказав їй: «Я є воскресіння і життя. Хто вірить у Мене, хоч і помре, буде жити. І кожен, хто живе і вірить у Мене, не помре повік. Чи віриш ти в це?»","Jesus said to her, “I am the resurrection and the life. He who believes in me will still live, even if he dies. Whoever lives and believes in me will never die. Do you believe this?”"]},
+jn13_34:{ref:["Івана 13:34","John 13:34"],t:["Нову заповідь даю вам: любіть один одного. Як Я полюбив вас, так і ви любіть один одного.","A new commandment I give to you, that you love one another. Just as I have loved you, you also love one another."]},
+jn14_9:{ref:["Івана 14:9","John 14:9"],t:["Хто бачив Мене, той бачив Отця.","He who has seen me has seen the Father."]},
+jn17_3:{ref:["Івана 17:3","John 17:3"],t:["А вічне життя — це щоб пізнали Тебе, єдиного істинного Бога, і Того, Кого Ти послав, — Ісуса Христа.","This is eternal life, that they should know you, the only true God, and him whom you sent, Jesus Christ."]},
+lk15_24:{ref:["Луки 15:24","Luke 15:24"],t:["Бо цей мій син був мертвий — і ожив, пропав — і знайшовся.","For this, my son, was dead and is alive again. He was lost and is found."]},
+rom5_1:{ref:["Римлян 5:1","Romans 5:1"],t:["Отже, виправдані вірою, ми маємо мир із Богом через нашого Господа Ісуса Христа.","Being therefore justified by faith, we have peace with God through our Lord Jesus Christ."]},
+rom5_8:{ref:["Римлян 5:8","Romans 5:8"],t:["А Бог доводить Свою любов до нас тим, що Христос помер за нас, коли ми були ще грішниками.","But God commends his own love toward us, in that while we were yet sinners, Christ died for us."]},
+rom6_14:{ref:["Римлян 6:14","Romans 6:14"],t:["Бо гріх не буде панувати над вами: ви ж не під Законом, а під благодаттю.","For sin will not have dominion over you, for you are not under law, but under grace."]},
+rom6_23:{ref:["Римлян 6:23","Romans 6:23"],t:["Бо плата за гріх — смерть, а дар Божий — вічне життя в Христі Ісусі, нашому Господі.","For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord."]},
+rom8_1:{ref:["Римлян 8:1–2","Romans 8:1–2"],t:["Отже, тепер немає жодного осуду тим, хто в Христі Ісусі, хто живе не за тілом, а за Духом. Бо закон Духа життя в Христі Ісусі визволив мене від закону гріха і смерті.","There is therefore now no condemnation to those who are in Christ Jesus, who don’t walk according to the flesh, but according to the Spirit. For the law of the Spirit of life in Christ Jesus made me free from the law of sin and of death."]},
+rom8_11:{ref:["Римлян 8:11","Romans 8:11"],t:["А якщо Дух Того, Хто воскресив Ісуса з мертвих, живе у вас, то Той, Хто воскресив Христа Ісуса з мертвих, оживить і ваші смертні тіла Своїм Духом, що живе у вас.","But if the Spirit of him who raised up Jesus from the dead dwells in you, he who raised up Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you."]},
+rom8_15:{ref:["Римлян 8:15","Romans 8:15"],t:["Бо ви не отримали духа рабства, щоб знову боятися, але отримали Духа синівства, Яким кличемо: «Авва, Отче!»","For you didn’t receive the spirit of bondage again to fear, but you received the Spirit of adoption, by whom we cry, “Abba! Father!”"]},
+rom12_2:{ref:["Римлян 12:2","Romans 12:2"],t:["Не пристосовуйтеся до цього світу, але змінюйтеся оновленням вашого розуму, щоб ви пізнавали, що є воля Божа — добра, приємна і досконала.","Don’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God."]},
+co15_20:{ref:["1 Коринтян 15:20–22","1 Corinthians 15:20–22"],t:["Та нині Христос воскрес із мертвих — первісток серед тих, хто заснув. Бо як через людину прийшла смерть, так через людину — і воскресіння мертвих. Як в Адамі всі вмирають, так у Христі всі оживуть.","But now Christ has been raised from the dead. He became the first fruit of those who are asleep. For since death came by man, the resurrection of the dead also came by man. For as in Adam all die, so also in Christ all will be made alive."]},
+co15_26:{ref:["1 Коринтян 15:26","1 Corinthians 15:26"],t:["Останній ворог, якого буде знищено, — смерть.","The last enemy that will be abolished is death."]},
+cor2_3_6:{ref:["2 Коринтян 3:6","2 Corinthians 3:6"],t:["Він зробив нас здатними бути служителями Нового Завіту — не букви, а Духа; бо буква вбиває, а Дух оживляє.","…who also made us sufficient as servants of a new covenant, not of the letter, but of the Spirit. For the letter kills, but the Spirit gives life."]},
+cor2_5_17:{ref:["2 Коринтян 5:17","2 Corinthians 5:17"],t:["Тож коли хто в Христі, той нове творіння. Старе минуло — ось, усе стало новим.","Therefore if anyone is in Christ, he is a new creation. The old things have passed away. Behold, all things have become new."]},
+gal2_20:{ref:["Галатів 2:20","Galatians 2:20"],t:["Я розп’ятий із Христом, і живу вже не я, а Христос живе в мені. А те життя, яким живу тепер у тілі, я живу вірою в Сина Божого, Який полюбив мене і віддав Себе за мене.","I have been crucified with Christ, and it is no longer I who live, but Christ lives in me. That life which I now live in the flesh, I live by faith in the Son of God, who loved me and gave himself up for me."]},
+gal2_21:{ref:["Галатів 2:21","Galatians 2:21"],t:["Я не відкидаю Божої благодаті. Бо якщо праведність — через Закон, то Христос помер даремно.","I don’t reject the grace of God. For if righteousness is through the law, then Christ died for nothing!"]},
+gal4_6:{ref:["Галатів 4:6–7","Galatians 4:6–7"],t:["А що ви діти, то Бог послав у ваші серця Духа Свого Сина, Який кличе: «Авва, Отче!» Тож ти вже не раб, а син; а якщо син, то й спадкоємець Божий через Христа.","And because you are children, God sent out the Spirit of his Son into your hearts, crying, “Abba, Father!” So you are no longer a bondservant, but a son; and if a son, then an heir of God through Christ."]},
+gal5_1:{ref:["Галатів 5:1","Galatians 5:1"],t:["Тож стійте у свободі, якою Христос нас визволив, і не піддавайтеся знову ярму рабства.","Stand firm therefore in the liberty by which Christ has made us free, and don’t be entangled again with a yoke of bondage."]},
+eph2_8:{ref:["Ефесян 2:8–10","Ephesians 2:8–10"],t:["Бо благодаттю ви спасенні через віру, і це не від вас — це Божий дар, не від діл, щоб ніхто не хвалився. Бо ми — Його творіння, створені в Христі Ісусі для добрих діл, які Бог наперед приготував, щоб ми в них жили.","…for by grace you have been saved through faith, and that not of yourselves; it is the gift of God, not of works, that no one would boast. For we are his workmanship, created in Christ Jesus for good works, which God prepared before that we would walk in them."]},
+eph2_18:{ref:["Ефесян 2:18","Ephesians 2:18"],t:["Бо через Нього ми всі маємо доступ до Отця в одному Дусі.","For through him we both have our access in one Spirit to the Father."]},
+php4_8:{ref:["Филип’ян 4:8","Philippians 4:8"],t:["Нарешті, брати: що правдиве, що гідне, що справедливе, що чисте, що любе, що славне, — коли є якась чеснота і якась похвала, — про це думайте.","Finally, brothers, whatever things are true, whatever things are honorable, whatever things are just, whatever things are pure, whatever things are lovely, whatever things are of good report: if there is any virtue and if there is any praise, think about these things."]},
+heb4_16:{ref:["Євреїв 4:16","Hebrews 4:16"],t:["Тож приступаймо сміливо до престолу благодаті, щоб отримати милість і знайти благодать для своєчасної допомоги.","Let’s therefore draw near with boldness to the throne of grace, that we may receive mercy and may find grace for help in time of need."]},
+heb8_13:{ref:["Євреїв 8:13","Hebrews 8:13"],t:["Кажучи «новий», Він визнав перший застарілим. А те, що застаріває і старіє, близьке до зникнення.","In that he says, “A new covenant”, he has made the first obsolete. But that which is becoming obsolete and grows aged is near to vanishing away."]},
+heb11_1:{ref:["Євреїв 11:1","Hebrews 11:1"],t:["Віра — це впевненість у сподіваному, доказ невидимого.","Now faith is assurance of things hoped for, proof of things not seen."]},
+j1_1_5:{ref:["1 Івана 1:5","1 John 1:5"],t:["Ось звістка, яку ми почули від Нього і звіщаємо вам: Бог є світло, і в Ньому немає жодної темряви.","This is the message which we have heard from him and announce to you, that God is light, and in him is no darkness at all."]},
+j1_3_1:{ref:["1 Івана 3:1","1 John 3:1"],t:["Дивіться, яку любов дав нам Отець, щоб ми звалися дітьми Божими!","See how great a love the Father has given to us, that we should be called children of God!"]},
+j1_4_8:{ref:["1 Івана 4:8","1 John 4:8"],t:["Хто не любить, той не пізнав Бога, бо Бог є любов.","He who doesn’t love doesn’t know God, for God is love."]},
+j1_4_16:{ref:["1 Івана 4:16","1 John 4:16"],t:["Бог є любов, і хто перебуває в любові, той перебуває в Бозі, і Бог перебуває в ньому.","God is love, and he who remains in love remains in God, and God remains in him."]},
+j1_4_18:{ref:["1 Івана 4:18","1 John 4:18"],t:["У любові немає страху, але досконала любов проганяє страх, бо страх має муку. Хто боїться, той не досконалий у любові.","There is no fear in love; but perfect love casts out fear, because fear has punishment. He who fears is not made perfect in love."]}
+};
+
+/* Sources: every statement about V. Tomev's teaching points to one of these */
+DB.src = {
+s_0705:["Проповідь «Ты не потерял свою ценность даже во грехе», 05.07.2026","Sermon “Ты не потерял свою ценность даже во грехе”, 5 Jul 2026"],
+s_0605:["Проповідь «БОГ НЕ ХОЧЕТ, ЧТОБЫ ТЫ СЧИТАЛ СЕБЯ НИЧТОЖЕСТВОМ», 05.06.2026","Sermon “БОГ НЕ ХОЧЕТ, ЧТОБЫ ТЫ СЧИТАЛ СЕБЯ НИЧТОЖЕСТВОМ”, 5 Jun 2026"],
+s_0712:["Проповідь 12.07.2026 (тема: простота у Христі)","Sermon of 12 Jul 2026 (theme: simplicity in Christ)"],
+s_22:["Проповідь після 22 днів під вартою (книга «22 дні»)","Sermon after 22 days in custody (the book “22 Days”)"],
+s_why:["Проповідь, за якою написано «Чому це можливо»","Sermon behind the book “Why It’s Possible”"],
+s_self:["Недільна проповідь, за якою написано «Будь собою»","Sunday sermon behind the book “Be Yourself”"],
+s_die:["Недільна проповідь, за якою написано «Хто навчив людей помирати?»","Sunday sermon behind the book “Who Taught People to Die?”"],
+s_think:["Проповідь про мислення і дві «матриці» (опрацьовано в березні 2026)","Sermon on thinking and the two “matrices” (processed March 2026)"],
+s_life:["Проповідь про життя і питання до Марти (опрацьовано в травні 2026)","Sermon on life and the question to Martha (processed May 2026)"],
+s_found:["Проповідь «фундамент — Ісус» (опрацьовано в листопаді 2026)","Sermon “the foundation is Jesus” (processed November 2026)"],
+q331:["Ефір «Питання-відповіді» №331, 10.07.2026","Q&A broadcast No. 331, 10 Jul 2026"],
+q330:["Ефір «Питання-відповіді» №330, 30.06.2026","Q&A broadcast No. 330, 30 Jun 2026"],
+q_zh:["Ефір «Питання-відповіді» з архієпископом Сергієм Журавльовим (книга «Бог тільки добрий»)","Q&A broadcast with Archbishop Sergei Zhuravlev (the book “God Is Only Good”)"],
+q_light:["Ефір, за яким написано «Батько світла»","Q&A broadcast behind the book “Father of Light”"],
+q_sept:["Ефір, за яким написано книжку з 13 відповідями (вересень 2026)","Q&A broadcast behind the 13-answers book (September 2026)"],
+q_apr:["Ефір (квітень 2026), за яким створено «Окуляри Ісуса»","Q&A broadcast (April 2026) behind “Jesus Glasses”"],
+q_may:["Ефір (травень 2026), книжка «Питання. Відповіді. Свобода.»","Q&A broadcast (May 2026), the book “Questions. Answers. Freedom.”"]
+};
+
+/* k: q = direct quote, r = retelling of a sermon, t = recurring theme, a = project's own reflection */
+DB.eternal = [
+{id:"e_jn3",v:["jn3_16","jn3_17"],title:["Бог так полюбив світ","God so loved the world"],
+ pastor:[{k:"t",src:"q331",x:["У ефірі №331 Віктор пропонує інакше почути слово «спасіння»: ми спасенні не від майбутнього пекла, а від обману, гріха і смерті — щоб жити.","In broadcast No. 331 Viktor suggests hearing the word “salvation” differently: we are saved not from a future hell but from deception, sin and death — in order to live."]}],
+ reflect:["Вірш починається не з людини, а з Бога: «так полюбив». Любов тут — причина, а вічне життя — подарунок. Наступний вірш додає: Син прийшов не судити, а спасати.","The verse starts not with us but with God: he “so loved”. Love is the cause, eternal life is the gift. The next verse adds that the Son came not to judge but to save."],
+ cards:[[["З чого починається Івана 3:16?","Where does John 3:16 begin?"],["З любові Бога до світу.","With God’s love for the world."]],[["Для чого Бог послав Сина (в. 17)?","Why did God send the Son (v. 17)?"],["Не судити світ, а щоб світ був спасенний.","Not to judge the world, but that it should be saved."]]],
+ check:[{q:["Що, за Івана 3:16, має той, хто вірить у Сина?","According to John 3:16, what does the one who believes in the Son have?"],o:[["Вічне життя","Eternal life"],["Новий закон","A new law"],["Випробування","A trial"]],a:0}]},
+{id:"e_jn5",v:["jn5_24"],title:["Уже перейшов від смерті до життя","Already passed out of death into life"],
+ pastor:[{k:"r",src:"s_found",x:["Віктор звертає увагу на час дієслова: хто вірить, той уже «має» вічне життя — не «матиме колись».","Viktor points to the tense of the verb: the one who believes already “has” eternal life — not “will have someday”."]}],
+ reflect:["У вірші три дієслова: «має», «не приходить», «перейшов». Усі три говорять про те, що вже є, а не про те, чого треба чекати.","The verse has three verbs: “has”, “doesn’t come”, “has passed”. All three speak of what already is, not of what must be awaited."],
+ cards:[[["У якому часі сказано «має вічне життя»?","What tense is “has eternal life”?"],["У теперішньому.","The present."]],[["Куди не приходить той, хто вірить?","Where does the believer not come?"],["На суд.","Into judgment."]]],
+ check:[{q:["Звідки й куди «перейшов» той, хто вірить (Ів 5:24)?","From what into what has the believer “passed” (John 5:24)?"],o:[["Від смерті до життя","Out of death into life"],["Від радості до смутку","From joy to sorrow"],["Від віри до закону","From faith to law"]],a:0}]},
+{id:"e_jn6",v:["jn6_47"],title:["Хто вірить — має","He who believes — has"],
+ pastor:[{k:"t",src:"s_life",x:["Повторювана думка проповідей: вічне життя не починається після смерті. Ісус прийшов, щоб люди жили вже тепер.","A recurring thought in the sermons: eternal life does not begin after death. Jesus came so that people would live now."]}],
+ reflect:["Це один із найкоротших віршів про вічне життя. У ньому немає умов «якщо заслужиш» — лише «хто вірить».","This is one of the shortest verses on eternal life. It has no “if you earn it” — only “he who believes”."],
+ cards:[[["Яка єдина умова названа в Івана 6:47?","What single condition is named in John 6:47?"],["Віра в Ісуса.","Believing in Jesus."]]],
+ check:[{q:["Як закінчується вірш: «хто вірить у Мене, …»?","How does the verse end: “he who believes in me …”?"],o:[["має вічне життя","has eternal life"],["буде випробуваний","will be tested"],["мусить заслужити","must earn it"]],a:0}]},
+{id:"e_jn11",v:["jn11_25"],title:["Я є воскресіння і життя","I am the resurrection and the life"],
+ pastor:[{k:"r",src:"s_life",x:["Віктор розділяє слова Ісуса на дві частини: «хоч і помре — буде жити» (воскресіння) і «хто живе і вірить — не помре повік». Він каже, що в першу частину християни вірять, а другу зазвичай обходять, — як і Марта, яка відповіла загальним визнанням віри.","Viktor divides Jesus’ words into two parts: “will live even if he dies” (resurrection) and “whoever lives and believes will never die”. He says Christians believe the first part and usually pass over the second — as Martha did, answering with a general confession of faith."]},
+  {k:"r",src:"s_why",x:["У проповіді про «чому це можливо» цей вірш названо місцем, де ми «застрягли»: легше шукати причини, чому це неможливо, ніж прийняти слова Ісуса як вони є.","In the “why it’s possible” sermon this verse is called the place where we “got stuck”: it is easier to look for reasons why it is impossible than to take Jesus’ words as they stand."]}],
+ reflect:["Ісус не каже «Я дам воскресіння», а «Я є воскресіння і життя». Життя тут — не подія в майбутньому, а Особа поруч. І закінчує Він питанням, зверненим до кожного: «Чи віриш ти в це?»","Jesus does not say “I will give resurrection” but “I am the resurrection and the life”. Life here is not a future event but a Person nearby. And he ends with a question for everyone: “Do you believe this?”"],
+ cards:[[["Яким питанням Ісус закінчує ці слова?","What question ends Jesus’ words?"],["«Чи віриш ти в це?»","“Do you believe this?”"]],[["Що сказано про того, хто живе і вірить?","What is said of the one who lives and believes?"],["Не помре повік.","Will never die."]]],
+ check:[{q:["Кому Ісус сказав ці слова?","To whom did Jesus say these words?"],o:[["Марті","Martha"],["Петрові","Peter"],["Никодимові","Nicodemus"]],a:0}]},
+{id:"e_jn17",v:["jn17_3","jn1_18"],title:["Вічне життя — це пізнавати","Eternal life is to know"],
+ pastor:[{k:"r",src:"s_life",x:["За Віктором, цей вірш — ключ: вічне життя починається через пізнання Бога, а не через смерть.","For Viktor this verse is the key: eternal life begins through knowing God, not through death."]},
+  {k:"r",src:"s_die",x:["Як пізнавати Отця? Дивитися на Сина. «Бога ніхто ніколи не бачив» — Його показав Ісус.","How do we know the Father? By looking at the Son. “No one has seen God at any time” — Jesus has shown him."]}],
+ reflect:["Ісус Сам дає визначення вічного життя — і це не місце й не тривалість, а стосунки: «щоб пізнали Тебе».","Jesus himself defines eternal life — and it is not a place or a duration but a relationship: “that they should know you”."],
+ cards:[[["Як Ісус визначає вічне життя?","How does Jesus define eternal life?"],["Пізнавати істинного Бога й Ісуса Христа.","To know the true God and Jesus Christ."]]],
+ check:[{q:["Хто, за Івана 1:18, явив Бога?","According to John 1:18, who has declared God?"],o:[["Єдинородний Син","The one and only Son"],["Мойсей","Moses"],["Ангели","Angels"]],a:0}]},
+{id:"e_rom6",v:["rom6_23"],title:["Плата і дар","Wages and gift"],
+ pastor:[{k:"t",src:"q_light",x:["Слово «гріх» Віктор пояснює через його буквальне значення — «промах повз ціль», неправильне мислення. Коли виправляються думки, виправляється й життя.","Viktor explains the word “sin” by its literal meaning — “missing the mark”, wrong thinking. When thoughts are corrected, life is corrected too."]}],
+ reflect:["У вірші два різні слова: «плата» і «дар». Плату заробляють, дар отримують. Вічне життя стоїть з боку дару.","The verse has two different words: “wages” and “gift”. Wages are earned, a gift is received. Eternal life stands on the side of the gift."],
+ cards:[[["Чим у Римлян 6:23 названо вічне життя?","What is eternal life called in Romans 6:23?"],["Даром Божим.","The free gift of God."]]],
+ check:[{q:["У Кому, за цим віршем, вічне життя?","In whom, according to this verse, is eternal life?"],o:[["У Христі Ісусі","In Christ Jesus"],["У Законі","In the law"],["У власних заслугах","In our own merit"]],a:0}]},
+{id:"e_rom8",v:["rom8_1","rom8_11","rom8_15"],title:["Жодного осуду","No condemnation"],
+ pastor:[{k:"t",src:"q_zh",x:["Повторювана тема ефірів: Бог не страшний. Найстрашніший суд уже відбувся — на хресті; попереду, за словами Віктора, не засудження.","A recurring theme of the broadcasts: God is not frightening. The most fearful judgment has already happened — at the cross; what lies ahead, in Viktor’s words, is not condemnation."]}],
+ pending:true,
+ reflect:["Розділ починається словами «немає жодного осуду» і веде до «Авва, Отче». Між ними — Дух життя, Який оживляє навіть смертні тіла.","The chapter opens with “no condemnation” and leads to “Abba, Father”. Between them is the Spirit of life, who gives life even to mortal bodies."],
+ cards:[[["Який закон визволив від закону гріха і смерті?","Which law made us free from the law of sin and death?"],["Закон Духа життя в Христі Ісусі.","The law of the Spirit of life in Christ Jesus."]],[["Якого духа ми не отримали (в. 15)?","Which spirit did we not receive (v. 15)?"],["Духа рабства, щоб боятися.","The spirit of bondage to fear."]]],
+ check:[{q:["Як ми кличемо до Бога Духом синівства?","How do we cry to God by the Spirit of adoption?"],o:[["«Авва, Отче!»","“Abba! Father!”"],["«Суддя наш!»","“Our Judge!”"],["«Пане суворий!»","“Stern Master!”"]],a:0}]},
+{id:"e_co15",v:["co15_20","co15_26"],title:["Смерть — останній ворог","Death — the last enemy"],
+ pastor:[{k:"t",src:"s_life",x:["Одна з найчастіших думок Віктора: смерть — це ворог, а не «двері до Бога». Ісус її переміг, а не прославляв.","One of Viktor’s most frequent thoughts: death is an enemy, not a “door to God”. Jesus defeated it; he did not glorify it."]},
+  {k:"r",src:"q_apr",x:["У квітневому ефірі він говорив, що центр Євангелія — воскресіння: померлі «сплять», як Лазар, і надія християнина — воскресіння з мертвих.","In the April broadcast he said the centre of the Gospel is resurrection: the dead “sleep”, like Lazarus, and the Christian’s hope is resurrection from the dead."]}],
+ reflect:["Павло називає смерть ворогом, якого буде знищено. Воскресіння Христа — «первісток»: перший плід, за яким іде весь урожай.","Paul calls death an enemy that will be abolished. Christ’s resurrection is the “first fruit”: the first sheaf, followed by the whole harvest."],
+ cards:[[["Як Павло називає смерть?","What does Paul call death?"],["Останнім ворогом.","The last enemy."]],[["Ким став воскреслий Христос?","What did the risen Christ become?"],["Первістком серед тих, хто заснув.","The first fruit of those who are asleep."]]],
+ check:[{q:["Що буде з останнім ворогом (1 Кор 15:26)?","What will happen to the last enemy (1 Cor 15:26)?"],o:[["Його буде знищено","It will be abolished"],["Він пануватиме вічно","It will reign forever"],["Його треба шанувати","It must be honoured"]],a:0}]},
+{id:"e_gal2",v:["gal2_20","cor2_5_17"],title:["Христос живе в мені","Christ lives in me"],
+ pastor:[],pending:true,
+ reflect:["Павло говорить про життя «тепер у тілі» — тобто тут, у звичайних днях. Його джерело — не зусилля, а довіра Тому, «Хто полюбив мене».","Paul speaks of the life “I now live in the flesh” — here, in ordinary days. Its source is not effort but trust in the One “who loved me”."],
+ cards:[[["Чим Павло живе «тепер у тілі»?","By what does Paul live “now in the flesh”?"],["Вірою в Сина Божого.","By faith in the Son of God."]]],
+ check:[{q:["Що, за Галатів 2:20, зробив Син Божий?","According to Galatians 2:20, what did the Son of God do?"],o:[["Полюбив мене і віддав Себе за мене","Loved me and gave himself up for me"],["Дав мені новий закон","Gave me a new law"],["Залишив мене самого","Left me alone"]],a:0}]},
+{id:"e_eph2",v:["eph2_8"],title:["Благодаттю ви спасенні","By grace you have been saved"],
+ pastor:[{k:"r",src:"s_0605",x:["У проповіді 5 червня 2026 Віктор пояснює слово «творіння» з Ефесян 2:10 як «шедевр»: людина — Божий шедевр, створений для доброго.","In the sermon of 5 June 2026 Viktor explains the word “workmanship” in Ephesians 2:10 as “masterpiece”: a person is God’s masterpiece, created for good."]},
+  {k:"t",src:"q_zh",x:["На питання «чи маємо ми платити ціну?» відповідь у ефірі була: ні, Ісус уже все заплатив.","To the question “must we pay a price?” the answer in the broadcast was: no, Jesus has already paid everything."]}],
+ reflect:["Три «не» в одному реченні: не від вас, не від діл, щоб ніхто не хвалився. І одне «так»: це дар.","Three “nots” in one sentence: not of yourselves, not of works, that no one would boast. And one “yes”: it is the gift."],
+ cards:[[["Через що ми спасенні благодаттю?","Through what are we saved by grace?"],["Через віру.","Through faith."]],[["Для чого ми створені в Христі (в. 10)?","What are we created for in Christ (v. 10)?"],["Для добрих діл.","For good works."]]],
+ check:[{q:["Чому спасіння «не від діл»?","Why is salvation “not of works”?"],o:[["Щоб ніхто не хвалився","That no one would boast"],["Бо діла погані","Because works are bad"],["Бо діла заборонені","Because works are forbidden"]],a:0}]}
+];
+
+DB.father = [
+{id:"f_love",ic:"❤️",title:["Бог є любов","God is love"],v:["j1_4_8","j1_1_5"],
+ pastor:[{k:"t",src:"q_zh",x:["Головна думка ефіру з Сергієм Журавльовим: Бог тільки добрий. Справжнього Бога показав Ісус — Батька, Який любить усіх.","The main thought of the broadcast with Sergei Zhuravlev: God is only good. The true God was shown by Jesus — a Father who loves everyone."]},
+  {k:"t",src:"q_light",x:["Бог — світло, і в Ньому немає жодної темряви. Мірило для всього — Ісус.","God is light, and in him there is no darkness at all. The measure of everything is Jesus."]}],
+ ask:[["Яким я уявляю Бога, коли думаю про Нього?","How do I picture God when I think of him?"],["Що змінюється, якщо «Бог є любов» — це не одна з рис, а Його суть?","What changes if “God is love” is not one trait but his very nature?"],["Де сьогодні я бачив світло?","Where did I see light today?"]],
+ sermon:"q_zh",sum:["Бог не «буває» добрим — Він є любов і світло.","God is not good “sometimes” — he is love and light."]},
+{id:"f_father",ic:"🌤️",title:["Бог як Отець","God as Father"],v:["jn1_18","jn14_9"],
+ pastor:[{k:"r",src:"s_die",x:["«Хочеш пізнати Отця — дивись на Сина». Ісус зцілював, годував і прощав — таким є й Отець.","“If you want to know the Father — look at the Son.” Jesus healed, fed and forgave — and so does the Father."]}],
+ ask:[["Які три слова описують Бога, якщо дивитися тільки на Ісуса?","Which three words describe God if I look only at Jesus?"],["Що в моєму образі Бога не схоже на Ісуса?","What in my image of God does not resemble Jesus?"],["Як звучить слово «Отець» для мене?","How does the word “Father” sound to me?"]],
+ sermon:"s_die",sum:["Отця видно в Синові.","The Father is seen in the Son."]},
+{id:"f_son",ic:"🌱",title:["Синівство","Sonship"],v:["gal4_6","j1_3_1","lk15_24"],
+ pastor:[{k:"r",src:"s_0705",x:["Блудний син лишався сином і далеко від дому. Батько каже «був мертвий і ожив», а не «перестав бути сином»: змінюється стан, а не синівство.","The prodigal remained a son even far from home. The father says “was dead and is alive”, not “ceased to be a son”: the condition changes, not the sonship."]},
+  {k:"q",src:"s_0705",x:["«Грешник — это не природа человека, а местонахождение человека.» (мовою оригіналу; робочий переклад: «Грішник — це не природа людини, а її місцезнаходження».)","“Грешник — это не природа человека, а местонахождение человека.” (original Russian; working translation: “A sinner is not a person’s nature but a person’s location.”)"]},
+  {k:"r",src:"q_light",x:["На питання про людей інших релігій Віктор відповів: усі люди — діти одного Батька.","Asked about people of other religions, Viktor answered: all people are children of one Father."]}],
+ ask:[["Чи відчуваю я себе дитиною чи найманим робітником?","Do I feel like a child or like a hired worker?"],["Що означає для мене «вже не раб, а син»?","What does “no longer a bondservant, but a son” mean to me?"],["Кого мені варто побачити як улюблену дитину Бога?","Whom should I begin to see as a beloved child of God?"]],
+ sermon:"s_0705",sum:["Син лишається сином. Цінність людини в очах Бога не втрачалася.","A son remains a son. A person’s worth in God’s eyes was never lost."]},
+{id:"f_access",ic:"🚪",title:["Доступ до Отця","Access to the Father"],v:["eph2_18","heb4_16"],
+ pastor:[{k:"r",src:"q_zh",x:["Ісус — двері до Батька. Він живий, і з Ним можна говорити.","Jesus is the door to the Father. He is alive, and one can speak with him."]},
+  {k:"r",src:"q_may",x:["Молитва — це не ритуал, а проста постійна розмова.","Prayer is not a ritual but a simple, ongoing conversation."]}],
+ ask:[["Що заважає мені приходити «сміливо»?","What keeps me from coming “with boldness”?"],["Якими словами я говорив би з Отцем без жодних формул?","What words would I use with the Father if there were no formulas?"],["Про що я хочу сказати Йому сьогодні?","What do I want to tell him today?"]],
+ sermon:"q_zh",sum:["Двері відчинені. Приходити можна просто.","The door is open. One can simply come."]},
+{id:"f_nofear",ic:"🕊️",title:["Життя без страху","Life without fear"],v:["j1_4_18","rom8_15"],
+ pastor:[{k:"r",src:"q_zh",x:["«Чи буде Страшний суд?» — найстрашніший суд уже був: хрест Ісуса. Попереду хіба «нагородження», але не засудження.","“Will there be a Last Judgment?” — the most fearful judgment has already been: the cross of Jesus. What lies ahead is rather an “award ceremony”, not condemnation."]},
+  {k:"r",src:"q_light",x:["Любов до Бога має йти з вдячності, а не зі страху.","Love for God should flow from gratitude, not from fear."]}],
+ ask:[["Чого я боюся у стосунках із Богом?","What am I afraid of in my relationship with God?"],["Звідки взявся цей страх — з Євангелія чи з чиїхось слів?","Where did that fear come from — the Gospel or someone’s words?"],["Що я зробив би інакше, якби не боявся?","What would I do differently if I were not afraid?"]],
+ sermon:"q_zh",sum:["У любові немає страху.","There is no fear in love."]},
+{id:"f_trust",ic:"🤲",title:["Довіра","Trust"],v:["heb11_1","rom5_8"],
+ pastor:[{k:"r",src:"q_sept",x:["Віра — це здійснення невидимого тут і тепер, а не очікування «колись потім». Вірити в Бога — означає вірити й у те, що Він створив тебе здатним.","Faith is the realization of the unseen here and now, not waiting for “someday later”. To believe in God also means to believe that he made you capable."]},
+  {k:"r",src:"q_may",x:["Упевненість у собі Віктор називає виявом довіри до Бога, а не її протилежністю.","Viktor calls confidence an expression of trust in God, not its opposite."]}],
+ ask:[["У чому я досі кажу «я не можу»?","Where do I still say “I can’t”?"],["Що невидиме я зараз втілюю вірою?","What unseen thing am I bringing about by faith right now?"],["Як Бог уже довів Свою любов до мене?","How has God already shown his love for me?"]],
+ sermon:"q_sept",sum:["Довіра — це впевненість у Тому, Хто полюбив першим.","Trust is confidence in the One who loved first."]},
+{id:"f_grace",ic:"🌿",title:["Благодать","Grace"],v:["eph2_8","jn1_17","rom5_1"],
+ pastor:[{k:"r",src:"s_think",x:["Закон і благодать Віктор порівнює з двома «операційними системами»: закон каже «роби, щоб тебе прийняли», благодать — «ти вже прийнятий».","Viktor compares law and grace to two “operating systems”: law says “do, to be accepted”; grace says “you are already accepted”."]},
+  {k:"t",src:"q_zh",x:["Платити ціну не треба: Ісус уже все заплатив.","There is no price to pay: Jesus has already paid everything."]}],
+ ask:[["Де я досі намагаюся «заслужити»?","Where am I still trying to “earn”?"],["Як виглядав би мій день, якщо я вже прийнятий?","What would my day look like if I am already accepted?"],["Кому я можу подарувати щось просто так?","To whom can I give something freely?"]],
+ sermon:"s_think",sum:["Благодать — це дар, а не зарплата.","Grace is a gift, not a wage."]},
+{id:"f_mind",ic:"💡",title:["Любов, яка змінює мислення","Love that changes thinking"],v:["rom12_2","php4_8"],
+ pastor:[{k:"r",src:"s_22",x:["Покаяння (метаноя) — це не жаль за тим, яким ти був, а інший спосіб думати про себе і про Бога.","Repentance (metanoia) is not regret for who you were, but a different way of thinking about yourself and about God."]},
+  {k:"r",src:"s_0705",x:["Христос прийшов не змінити ставлення Бога до людини, а змінити уявлення людини про себе і про Бога.","Christ came not to change God’s attitude to people, but to change people’s view of themselves and of God."]},
+  {k:"r",src:"s_think",x:["Филип’ян 4:8 Віктор називає програмою мислення: негативну думку не придушують, а замінюють.","Viktor calls Philippians 4:8 a programme for thinking: a negative thought is not suppressed but replaced."]}],
+ ask:[["Яку думку про себе мені час замінити?","Which thought about myself is it time to replace?"],["Що «правдиве, чисте й любе» я можу обрати для роздумів сьогодні?","What “true, pure and lovely” thing can I choose to think about today?"],["Що я думаю про Бога, коли мені важко?","What do I think about God when things are hard?"]],
+ sermon:"s_22",sum:["Змінюється мислення — змінюється життя.","When thinking changes, life changes."]}
+];
+
+/* Comparisons: columns are the project's own study aid; pastor notes are sourced */
+DB.law = [
+{id:"l_lg",title:["Закон і благодать","Law and grace"],a:["Закон","Law"],b:["Благодать","Grace"],
+ ap:[["Даний через Мойсея","Given through Moses"],["«Роби, щоб тебе прийняли»","“Do, to be accepted”"],["Показує, чого бракує","Shows what is lacking"]],
+ bp:[["Прийшла через Ісуса Христа","Came through Jesus Christ"],["«Ти вже прийнятий»","“You are already accepted”"],["Дає те, чого бракувало","Gives what was lacking"]],
+ v:["jn1_17","rom6_14"],pastor:[{k:"r",src:"s_think",x:["Дві «матриці», дві «операційні системи», які, за Віктором, не можна змішувати.","Two “matrices”, two “operating systems” which, Viktor says, must not be mixed."]}]},
+{id:"l_md",title:["Заслуги і дар","Merit and gift"],a:["Заслуги","Merit"],b:["Дар","Gift"],
+ ap:[["Плата за зроблене","Payment for what was done"],["Є чим хвалитися","Something to boast about"],["Завжди «ще недостатньо»","Always “not enough yet”"]],
+ bp:[["Подарунок від Того, Хто любить","A present from the One who loves"],["Нічим хвалитися — є за що дякувати","Nothing to boast of — much to give thanks for"],["Уже отримано","Already received"]],
+ v:["eph2_8","rom6_23"],pastor:[{k:"r",src:"s_0705",x:["Спасіння — це не перетворення сміття на скарб, а повернення скарбу додому.","Salvation is not turning trash into treasure, but bringing the treasure home."]}]},
+{id:"l_fl",title:["Страх і любов","Fear and love"],a:["Страх","Fear"],b:["Любов","Love"],
+ ap:[["Дух рабства","A spirit of bondage"],["Ховається від Бога","Hides from God"],["Має муку","Has punishment"]],
+ bp:[["Дух синівства","The Spirit of adoption"],["Кличе: «Авва, Отче!»","Cries: “Abba! Father!”"],["Проганяє страх","Casts out fear"]],
+ v:["j1_4_18","rom8_15"],pastor:[{k:"t",src:"q_zh",x:["Бог не страшний; страх, за словами Віктора, діє «як віра навпаки».","God is not frightening; fear, in Viktor’s words, works “like faith in reverse”."]}]},
+{id:"l_rr",title:["Зовнішні правила і внутрішнє оновлення","Outward rules and inward renewal"],a:["Зовнішні правила","Outward rules"],b:["Внутрішнє оновлення","Inward renewal"],
+ ap:[["Керують поведінкою","Manage behaviour"],["Буква","The letter"],["Змінюють вигляд","Change the appearance"]],
+ bp:[["Оновлюють розум","Renew the mind"],["Дух, що оживляє","The Spirit who gives life"],["Змінюють джерело","Change the source"]],
+ v:["rom12_2","cor2_3_6"],pastor:[{k:"r",src:"s_think",x:["Поведінка — лише симптом; джерело — думки. Тому мислення важливіше за зовнішній контроль.","Behaviour is only a symptom; the source is thoughts. So thinking matters more than outward control."]}]},
+{id:"l_on",title:["Старий Завіт і Новий Завіт","Old Covenant and New Covenant"],a:["Старий Завіт","Old Covenant"],b:["Новий Завіт","New Covenant"],
+ ap:[["Багато приписів","Many regulations"],["«Перший», названий застарілим (Євр 8:13)","The “first”, called obsolete (Heb 8:13)"],["Тінь і очікування","Shadow and expectation"]],
+ bp:[["Одна заповідь: любіть один одного","One commandment: love one another"],["Завіт Духа, а не букви","A covenant of the Spirit, not the letter"],["Отець, явлений у Сині","The Father shown in the Son"]],
+ v:["heb8_13","jn13_34"],pastor:[{k:"r",src:"q_zh",x:["Власна заповідь Ісуса одна: «Любіть один одного».","Jesus’ own commandment is one: “Love one another.”"]},{k:"r",src:"q_apr",x:["Віктор радить читати всю Біблію «крізь окуляри Ісуса»: мірилом є те, яким Отця показав Син.","Viktor advises reading the whole Bible “through the glasses of Jesus”: the measure is the Father as the Son has shown him."]}]},
+{id:"l_rf",title:["Праведність і віра","Righteousness and faith"],a:["Праведність від Закону","Righteousness from the law"],b:["Праведність через віру","Righteousness through faith"],
+ ap:[["Спирається на власні діла","Rests on one’s own works"],["«Тоді Христос помер даремно» (Гал 2:21)","“Then Christ died for nothing” (Gal 2:21)"],["Немає миру","No peace"]],
+ bp:[["Спирається на Христа","Rests on Christ"],["«Виправдані вірою»","“Justified by faith”"],["Мир із Богом","Peace with God"]],
+ v:["rom5_1","gal2_21","heb11_1"],pastor:[{k:"r",src:"q_sept",x:["Віра здійснює сподіване тут і тепер; вона потрібна, щоб жити.","Faith brings about what is hoped for here and now; it is needed in order to live."]}]},
+{id:"l_rm",title:["Покаяння і зміна мислення","Repentance and a change of mind"],a:["Покаяння як самоосуд","Repentance as self-condemnation"],b:["Покаяння як зміна мислення","Repentance as a change of mind"],
+ ap:[["Дивиться назад","Looks backward"],["Тримається на провині","Runs on guilt"],["Повторюється знову і знову","Repeats again and again"]],
+ bp:[["Дивиться на Бога і на себе по-новому","Sees God and oneself anew"],["Тримається на правді","Runs on truth"],["Веде до нового життя","Leads into new life"]],
+ v:["rom12_2","cor2_5_17"],pastor:[{k:"r",src:"s_22",x:["Грецьке слово «метаноя»: інший спосіб думати про себе і про Бога.","The Greek word “metanoia”: a different way of thinking about yourself and about God."]},{k:"r",src:"q_sept",x:["Покаяння — це зміна мислення, спасіння — вихід до пізнання.","Repentance is a change of thinking; salvation is a way out into knowing."]}]}
+];
+/* ===== DATA 2: sermons, Q&A, library, music ===== */
+DB.cats = {
+eternal:["Вічне життя","Eternal life"],father:["Бог Отець","God the Father"],jesus:["Ісус Христос","Jesus Christ"],grace:["Благодать","Grace"],
+law:["Закон і Новий Завіт","Law and New Covenant"],right:["Праведність","Righteousness"],repent:["Покаяння","Repentance"],newman:["Нова людина","The new person"],
+spirit:["Життя в Дусі","Life in the Spirit"],faith:["Віра","Faith"],love:["Любов","Love"],nofear:["Свобода від страху","Freedom from fear"],
+rom:["Послання до Римлян","Romans"],gal:["Послання до Галатів","Galatians"],heb:["Послання до Євреїв","Hebrews"]
+};
+
+/* title = original title when confirmed (kept in the original language); tt = working translation */
+DB.sermons = [
+{id:"s_0705",title:"Ты не потерял свою ценность даже во грехе",tt:["Ти не втратив своєї цінності навіть у гріху","You Did Not Lose Your Worth Even in Sin"],date:"2026-07-05",dur:"1:05:18",lang:"ru",cats:["newman","father","repent"],
+ refs:["Луки 15","Дії 10–11","Колосян 1:13"],refsEn:["Luke 15","Acts 10–11","Colossians 1:13"],
+ sum:["Слово «грішник» описує не природу людини, а місце, де вона опинилася. Христос прийшов змінити не ставлення Бога до людини, а уявлення людини про себе і про Бога.","The word “sinner” describes not a person’s nature but the place where they ended up. Christ came to change not God’s attitude to people but people’s view of themselves and of God."],
+ pts:[["Спасіння — це повернення скарбу додому, а не перетворення сміття на скарб.","Salvation is bringing the treasure home, not turning trash into treasure."],["Блудний син лишався сином і далеко від дому.","The prodigal remained a son even far from home."],["Навернення — це зміна положення і мислення.","Conversion is a change of position and of thinking."],["Практика: бачити рідних і сусідів як улюблених дітей Божих.","Practice: see family and neighbours as beloved children of God."]]},
+{id:"s_0605",title:"БОГ НЕ ХОЧЕТ, ЧТОБЫ ТЫ СЧИТАЛ СЕБЯ НИЧТОЖЕСТВОМ",tt:["Бог не хоче, щоб ти вважав себе нікчемою","God Does Not Want You to See Yourself as Worthless"],date:"2026-06-05",dur:"47:58",lang:"ru",cats:["newman","love"],
+ refs:["Римлян 12:3","Ефесян 2:10"],refsEn:["Romans 12:3","Ephesians 2:10"],
+ sum:["Смирення — це не думати про себе гірше, а думати про себе так, як думає Бог.","Humility is not thinking worse of yourself, but thinking of yourself the way God does."],
+ pts:[["Ефесян 2:10: «творіння» — це шедевр.","Ephesians 2:10: “workmanship” means masterpiece."],["Самоприниження — не смирення.","Self-abasement is not humility."],["Ісус ніколи не применшував Себе — і був лагідним та смиренним серцем.","Jesus never belittled himself — and was gentle and lowly in heart."],["Смиренний не вважає себе ні кращим, ні гіршим за інших.","The humble person counts himself neither better nor worse than others."]]},
+{id:"s_0712",title:"",tt:["Проповідь 12 липня 2026 (назва очікує підтвердження)","Sermon of 12 July 2026 (title awaiting confirmation)"],date:"2026-07-12",dur:"",lang:"ru",cats:["jesus","grace"],
+ refs:[],refsEn:[],
+ sum:["Тема проповіді — простота у Христі. Докладний переказ із цитатами вміщено в розділі 15 книги «Реформація 2026».","The theme is simplicity in Christ. A detailed retelling with quotations is in chapter 15 of the book “Reformation 2026”."],pts:[]},
+{id:"s_22",title:"",tt:["Проповідь після 22 днів під вартою","Sermon after 22 days in custody"],date:"",dur:"",lang:"ru",cats:["repent","grace"],
+ refs:[],refsEn:[],
+ sum:["Розповідь про те, як послання благодаті подіяло на людей, які ніколи не були в церкві. Усе тримається на слові «метаноя»: покаяння — це інший спосіб думати про себе і про Бога.","An account of how the message of grace worked among people who had never been to church. Everything rests on the word “metanoia”: repentance is a different way of thinking about yourself and about God."],
+ pts:[["Покаяння — не жаль за минулим, а зміна мислення.","Repentance is not regret for the past but a change of mind."],["Благодать діє там, де її ніколи не чули.","Grace works where it has never been heard."]],
+ links:[["Книга «22 дні» (укр.)","https://neonvoidstudio.itch.io/22dni-za-dverima"],["“22 Days” (English)","https://neonvoidstudio.itch.io/22-days-grace-behind-iron-doors"]]},
+{id:"s_why",title:"",tt:["Проповідь про те, чому це можливо","Sermon on why it is possible"],date:"",dur:"",lang:"ru",cats:["faith","eternal"],
+ refs:["Луки 5:5","Марка 9:23–24","Івана 11:25–26"],refsEn:["Luke 5:5","Mark 9:23–24","John 11:25–26"],
+ sum:["Люди діляться на тих, хто шукає, чому це неможливо, і тих, хто шукає, чому це можливо. Від цього фокуса залежить, що станеться далі.","People divide into those who look for why it is impossible and those who look for why it is possible. That focus shapes what happens next."],
+ pts:[["Петро закидає сітку «за словом» Ісуса.","Peter lets down the net “at your word”."],["«Допоможи моєму невірству».","“Help my unbelief.”"],["Івана 11:25–26 — вірш, у якому ми «застрягли».","John 11:25–26 — the verse where we “got stuck”."]],
+ links:[["Книга «Чому це можливо»","https://neonvoidstudio.itch.io/chomy-ce-mozlivo"],["“Why It’s Possible”","https://neonvoidstudio.itch.io/why-its-possible"]]},
+{id:"s_self",title:"",tt:["Недільна проповідь «Будь собою» (назва книги-переказу)","Sunday sermon “Be Yourself” (title of the retelling)"],date:"",dur:"",lang:"ru",cats:["newman","love"],
+ refs:[],refsEn:[],
+ sum:["Проповідь про те, щоб нікого не наслідувати, бути собою і любити себе; у ній також ідеться про причастя.","A sermon about not imitating anyone, being yourself and loving yourself; it also speaks about communion."],pts:[]},
+{id:"s_die",title:"",tt:["Недільна проповідь «Хто навчив людей помирати?» (назва книги-переказу)","Sunday sermon “Who Taught People to Die?” (title of the retelling)"],date:"",dur:"",lang:"ru",cats:["eternal","father"],
+ refs:["Луки 18:18","Луки 11:52","Івана 1:18","Івана 11:26","Івана 6:51"],refsEn:["Luke 18:18","Luke 11:52","John 1:18","John 11:26","John 6:51"],
+ sum:["Проповідь запрошує порівнювати, перевіряти і робити власні висновки. Яким є Бог — видно з Ісуса. Причастя — це життя.","The sermon invites us to compare, to test and to draw our own conclusions. What God is like is seen in Jesus. Communion is life."],
+ pts:[["«Ключ розуміння» — уміння думати самому.","The “key of knowledge” is the ability to think for yourself."],["Хочеш пізнати Отця — дивись на Сина.","If you want to know the Father — look at the Son."],["«Хто живе і вірить у Мене, не помре повік».","“Whoever lives and believes in me will never die.”"]]},
+{id:"s_think",title:"",tt:["Проповідь про мислення і дві «матриці»","Sermon on thinking and the two “matrices”"],date:"",dur:"",lang:"ru",cats:["grace","law","faith"],
+ refs:["Филип’ян 4:8","2 Коринтян 6:10"],refsEn:["Philippians 4:8","2 Corinthians 6:10"],
+ sum:["Закон і благодать — дві різні «операційні системи». Закон каже «роби, щоб тебе прийняли», благодать — «ти вже прийнятий». Головне поле змін — мислення.","Law and grace are two different “operating systems”. Law says “do, to be accepted”; grace says “you are already accepted”. The main field of change is thinking."],
+ pts:[["Саме життя важливіше за ситуації в житті.","Life itself matters more than the situations in life."],["Филип’ян 4:8 — програма мислення.","Philippians 4:8 is a programme for thinking."],["Негатив не придушують, а замінюють: факт + «але» + віра.","Negativity is not suppressed but replaced: fact + “but” + faith."]]},
+{id:"s_life",title:"",tt:["Проповідь про життя і питання до Марти","Sermon on life and the question to Martha"],date:"",dur:"",lang:"ru",cats:["eternal","jesus"],
+ refs:["Івана 11:25–26","Івана 17:3"],refsEn:["John 11:25–26","John 17:3"],
+ sum:["Ісус прийшов, щоб люди жили. Смерть — ворог, а не двері до Бога. Вічне життя починається через пізнання Бога.","Jesus came so that people would live. Death is an enemy, not a door to God. Eternal life begins through knowing God."],
+ pts:[["«Гріх» буквально — промах повз ціль.","“Sin” literally means missing the mark."],["Питання до Марти звернене до кожного.","The question to Martha is addressed to everyone."],["Івана 17:3 — ключ.","John 17:3 is the key."]]},
+{id:"s_found",title:"",tt:["Проповідь «фундамент — Ісус»","Sermon “the foundation is Jesus”"],date:"",dur:"",lang:"ru",cats:["eternal","law","jesus"],
+ refs:["Івана 11:25–26","Івана 10:10"],refsEn:["John 11:25–26","John 10:10"],
+ sum:["Біблія — це бібліотека з 66 книг. Фундаментом Віктор пропонує брати те, що сказав Ісус: «хто вірить у Мене, вже має вічне життя».","The Bible is a library of 66 books. Viktor proposes taking as the foundation what Jesus said: “he who believes in me already has eternal life”."],
+ pts:[["Люди вірять у те, що постійно чують.","People believe what they keep hearing."],["Ісус дав життя «вдосталь».","Jesus gave life “abundantly”."],["«Як на небі, так і на землі».","“On earth as it is in heaven.”"]]}
+];
+
+/* Q&A programme with Viktor and Svitlana Tomev */
+DB.qa = [
+{id:"q1106",date:"2026-11-06",title:["Програма «Питання та відповіді», 6 листопада 2026","“Questions and Answers” programme, 6 November 2026"],url:"https://www.youtube.com/live/jeZ4ObFzNTc",
+ note:["Дату й посилання надав автор проєкту. Перелік питань цього випуску ще не звірено із записом, тому тут його немає. Якщо це той самий ефір, за яким написано «Батько світла», об’єднайте картки в редакторі.","The date and link were supplied by the project author. The list of questions has not yet been checked against the recording, so it is not shown here. If this is the same broadcast as the one behind “Father of Light”, merge the cards in the editor."],qs:[]},
+{id:"q_light",date:"",title:["Ефір, за яким написано «Батько світла» (12 питань)","Broadcast behind “Father of Light” (12 questions)"],url:"",
+ note:["Дата ефіру не підтверджена; переказ зроблено 6 листопада 2026.","Broadcast date not confirmed; the retelling was made on 6 November 2026."],
+ qs:[
+ {q:["Чи все в Біблії — загадки і «прообрази»?","Is everything in the Bible riddles and “types”?"],a:["Коли Павло каже «це образи для нас», він має на увазі приклади для науки — як дорожній знак після аварії.","When Paul says “these are examples for us”, he means lessons to learn from — like a road sign put up after an accident."]},
+ {q:["Чому Ісус сказав: «Не гріши більше»?","Why did Jesus say “sin no more”?"],a:["Гріх — це «промах повз ціль», неправильне мислення. Коли виправляєш думки, виправляється й поведінка.","Sin is “missing the mark”, wrong thinking. When thoughts are corrected, behaviour follows."]},
+ {q:["Чи треба служити Ісусу?","Must we serve Jesus?"],a:["Богові нічого від нас не потрібно — Він служить нам. Ми служимо людям у біді, і це ніби для Нього. Любов має йти з вдячності, а не зі страху.","God needs nothing from us — he serves us. We serve people in need, and that is as if for him. Love should come from gratitude, not fear."]},
+ {q:["Мусульмани, юдеї — діти Божі?","Are Muslims and Jews children of God?"],a:["Усі люди — діти одного Батька. Ворожнеча починається там, де хтось вважає «обраним» лише себе.","All people are children of one Father. Hostility begins where someone counts only himself as “chosen”."]},
+ {q:["Чому Ісус не дочитав пророка Ісаю до кінця?","Why did Jesus not read Isaiah to the end?"],a:["У синагозі Він зупинився якраз перед словами про «день помсти».","In the synagogue he stopped just before the words about the “day of vengeance”."],ref:["Луки 4:18–20; Ісаї 61:1–2","Luke 4:18–20; Isaiah 61:1–2"]},
+ {q:["Чи страшно «впасти в руки Бога живого»?","Is it fearful “to fall into the hands of the living God”?"],a:["Автор листа цитує Старий Завіт. Бог не страшний.","The writer is quoting the Old Testament. God is not frightening."],ref:["Євреїв 10:31","Hebrews 10:31"]},
+ {q:["Фарисеї сидять на Мойсеєвому місці — робити, що кажуть?","The Pharisees sit on Moses’ seat — do what they say?"],a:["Вони вимагають від інших, а самі не роблять.","They demand of others and do not do it themselves."],ref:["Матвія 23:2–3","Matthew 23:2–3"]},
+ {q:["Енох та Ілля не померли?","Did Enoch and Elijah not die?"],a:["Віктор відповідає, що померли: «переселив» означає «переніс в інше місце».","Viktor answers that they died: “translated” means “moved to another place”."]},
+ {q:["Якби не було Біблії?","What if there were no Bible?"],a:["Проблема не в Біблії, а в установці «так написано, тож думати не можна».","The problem is not the Bible but the mindset “it is written, so thinking is not allowed”."]},
+ {q:["Як іти до вічного життя: харчування, спорт?","How to walk toward eternal life: diet, sport?"],a:["Головне — зміна мислення. Жити «за» життя, а не «проти» смерті. А тіло берегти, як єдину машину на все життя.","The main thing is a change of thinking. Live “for” life, not “against” death. And look after the body like the one car you have for a lifetime."]}
+ ],links:[]},
+{id:"q331",date:"2026-07-10",title:["№331 | Ответы на ваши вопросы в прямом эфире","No. 331 | Ответы на ваши вопросы в прямом эфире"],orig:true,url:"",
+ note:["Ключова фраза ефіру (пряма цитата, мовою оригіналу): «Евангелие ждёт реформации».","Key phrase of the broadcast (direct quote, original language): “Евангелие ждёт реформации” — “The Gospel is waiting for a reformation.”"],
+ qs:[
+ {q:["Чи зникнуть технології? (1 Коринтян 7:31)","Will technology disappear? (1 Corinthians 7:31)"],a:["Прогрес — від Бога і не зникне.","Progress is from God and will not disappear."]},
+ {q:["Хвороба дитини: «Бог не хоче» чи «мало віри»?","A child’s illness: “God doesn’t want to” or “too little faith”?"],a:["Обидві відповіді Віктор називає хибними й гнітючими. Бог — за здоров’я; допомога може прийти різними шляхами, і через лікарів теж.","Viktor calls both answers wrong and crushing. God is for health; help can come in different ways, including through doctors."]},
+ {q:["Що означає «спасемося від гніву»?","What does “saved from wrath” mean?"],a:["Контекст — вірш 8: Бог доводить любов, коли ми ще були грішниками. Гнів — не в Бозі.","The context is verse 8: God shows his love while we were still sinners. Wrath is not in God."],ref:["Римлян 5:8–9","Romans 5:8–9"]},
+ {q:["Від чого ми спасенні?","What are we saved from?"],a:["Від обману, гріха і смерті — щоб жити.","From deception, sin and death — in order to live."]}
+ ]},
+{id:"q330",date:"2026-06-30",title:["№330 | Ответы на ваши вопросы в прямом эфире (Спрашивай что угодно)","No. 330 | Ответы на ваши вопросы в прямом эфире (Спрашивай что угодно)"],orig:true,url:"",dur:"2:41:35",
+ note:["У ефірі було кілька чесних «не знаю». Більше питань цього випуску — у міні-книжках «Світло замість тіні», «Не бійся запитати», «Церква без стін».","The broadcast included several honest “I don’t know”s. More questions from this episode are in the mini-books “Light Instead of Shadow”, “Don’t Be Afraid to Ask” and “Church Without Walls”."],
+ qs:[
+ {q:["Чи зцілювала тінь Петра?","Did Peter’s shadow heal?"],a:["Текст описує очікування людей; зцілення пов’язане з вірою.","The text describes what people expected; healing is tied to faith."],ref:["Дії 5:15","Acts 5:15"]},
+ {q:["Що таке віра?","What is faith?"],a:["Упевненість у тому, чого ще не видно.","Assurance of what is not yet seen."],ref:["Євреїв 11:1","Hebrews 11:1"]}
+ ]},
+{id:"q_zh",date:"",title:["Ефір з архієпископом Сергієм Журавльовим","Broadcast with Archbishop Sergei Zhuravlev"],url:"",
+ note:["Дата ефіру не підтверджена; переказ зроблено в жовтні 2026 (книга «Бог тільки добрий»). Тут наведено лише відповіді Віктора Томєва.","Broadcast date not confirmed; the retelling was made in October 2026 (the book “God Is Only Good”). Only Viktor Tomev’s answers are given here."],
+ qs:[
+ {q:["Ісус велів виконувати весь Закон?","Did Jesus command keeping the whole Law?"],a:["Він сказав, що має збутися все написане про Нього. Його власна заповідь одна: «Любіть один одного».","He said that all that was written about him must be fulfilled. His own commandment is one: “Love one another.”"]},
+ {q:["Ми маємо платити ціну?","Must we pay a price?"],a:["Ні. Ісус уже все заплатив. «Страждати не обов’язково».","No. Jesus has already paid everything. “Suffering is not required.”"]},
+ {q:["Чи молитися Ісусу?","Should we pray to Jesus?"],a:["Ісус — двері до Батька. Він живий, з Ним можна говорити.","Jesus is the door to the Father. He is alive and one can speak with him."]},
+ {q:["Причастя, якщо я пішла з церкви?","Communion if I have left my church?"],a:["Можна приймати вдома або онлайн.","It can be taken at home or online."]},
+ {q:["Як говорити з вуличними проповідниками?","How to talk with street preachers?"],a:["Говорити з ними про люблячого Бога. Найкраща проповідь — твоє життя.","Talk with them about a loving God. The best sermon is your life."]},
+ {q:["Що таке духовна людина?","What is a spiritual person?"],a:["Усе, що несе любов, життя і творення.","Everything that carries love, life and creation."]},
+ {q:["Чи буде Страшний суд?","Will there be a Last Judgment?"],a:["Найстрашніший суд уже був — хрест. Буде хіба «нагородження», але не засудження.","The most fearful judgment has already been — the cross. There will rather be an “award ceremony”, not condemnation."]},
+ {q:["Чи планував Бог убивство Сина?","Did God plan the killing of his Son?"],a:["Ні. Люди вбили, а Бог воскресив. Притча про сусіда і яблука: кожен дає те, що має.","No. People killed, and God raised. The parable of the neighbour and the apples: each gives what he has."]}
+ ]},
+{id:"q_sept",date:"",title:["Ефір із 13 відповідями (вересень 2026)","Broadcast with 13 answers (September 2026)"],url:"",
+ note:["Дата ефіру не підтверджена. Наведено частину питань.","Broadcast date not confirmed. A selection of the questions is shown."],
+ qs:[
+ {q:["Вічне життя прийде через науку?","Will eternal life come through science?"],a:["Віктор не стверджував цього категорично. Наука — теж віра в дії: віра здійснює невидиме, а не чекає «колись потім».","Viktor did not claim this categorically. Science is also faith in action: faith brings about the unseen rather than waiting for “someday”."],ref:["Євреїв 11:1","Hebrews 11:1"]},
+ {q:["Віра чи самовпевненість?","Faith or self-confidence?"],a:["Вірити в Бога — означає вірити, що Він створив тебе здатним.","To believe in God means to believe that he made you capable."],ref:["Марка 11:22–24","Mark 11:22–24"]},
+ {q:["Тоді навіщо християнство?","Then why Christianity?"],a:["Важлива не назва, а результат: щоб людина звільнилася від страху й почала жити.","What matters is not the label but the result: that a person be freed from fear and begin to live."]},
+ {q:["Не розписані, але з дітьми — ми блудники?","Not registered but with children — are we living in sin?"],a:["Ні. Сім’ю творять вірність і любов.","No. A family is made by faithfulness and love."]}
+ ]},
+{id:"q_apr",date:"",title:["Ефір (квітень 2026): «окуляри Ісуса»","Broadcast (April 2026): “Jesus glasses”"],url:"",
+ note:["Дата ефіру не підтверджена. За цим ефіром створено гру «Окуляри Ісуса».","Broadcast date not confirmed. The game “Jesus Glasses” is based on it."],
+ qs:[
+ {q:["Що таке «пусті слова»?","What are “idle words”?"],a:["У контексті — лукаві слова фарисеїв про Ісуса. Тримайся думки, яка є в контексті.","In context — the Pharisees’ deceitful words about Jesus. Keep to the thought of the context."],ref:["Матвія 12:36","Matthew 12:36"]},
+ {q:["Де померлі?","Where are the dead?"],a:["Вони «сплять», як Лазар. Центр Євангелія — воскресіння.","They “sleep”, like Lazarus. The centre of the Gospel is resurrection."]},
+ {q:["Як розуміти 1 Петра 3:18–21?","How to read 1 Peter 3:18–21?"],a:["Нас спасає сила воскресіння, прообразом якої був ковчег.","We are saved by the power of the resurrection, prefigured by the ark."],ref:["1 Петра 3:18–21","1 Peter 3:18–21"]},
+ {q:["Як молитися за хворих близьких?","How to pray for sick relatives?"],a:["Якщо людина при тямі — потрібна її віра; за малу дитину діє віра батьків.","If the person is conscious, their own faith is needed; for a small child the parents’ faith acts."]}
+ ],links:[["Гра «Окуляри Ісуса»","https://neonvoidstudio.itch.io/jesus-glasses"]]},
+{id:"q_may",date:"",title:["Ефір (травень 2026): «Питання. Відповіді. Свобода.»","Broadcast (May 2026): “Questions. Answers. Freedom.”"],url:"",
+ note:["Дата ефіру не підтверджена. Наведено теми відповідей.","Broadcast date not confirmed. The topics of the answers are listed."],
+ qs:[
+ {q:["Чи нормально змінювати погляди?","Is it normal to change one’s views?"],a:["Так, світогляд із часом змінюється.","Yes, a worldview changes over time."]},
+ {q:["Кукіль — це про людей?","Are the tares about people?"],a:["Віктор читає притчу як мову про вчення, а не про категорії людей.","Viktor reads the parable as speaking of teachings, not of categories of people."],ref:["Матвія 13:38","Matthew 13:38"]},
+ {q:["Як молитися?","How to pray?"],a:["Молитва — проста постійна розмова, а не ритуал.","Prayer is a simple ongoing conversation, not a ritual."]},
+ {q:["Що таке справжнє смирення?","What is true humility?"],a:["Його слід відрізняти від релігійного контролю та маніпуляції.","It must be told apart from religious control and manipulation."]}
+ ],links:[["Міні-книга","https://neonvoidstudio.itch.io/mini-book-bibles"]]}
+];
+
+DB.bcats = {own:["Авторські книги","Author’s books"],mini:["Міні-книжки за проповідями й ефірами","Mini-books from sermons and broadcasts"],guide:["Навчальні матеріали сайту","Site study materials"],other:["Інше","Other"]};
+var NVS = ["Neon Void Studio (автор проєкту)","Neon Void Studio (project author)"];
+DB.books = [
+{id:"guide",cat:"guide",ic:"☀️",title:["Вічне життя вже зараз: короткий путівник","Eternal Life Now: A Short Guide"],author:["Редакція проєкту (самостійний навчальний матеріал, підготовлено за допомогою ШІ)","Project editors (independent study material, prepared with AI assistance)"],
+ desc:["П’ять коротких розділів, які ведуть через головні тексти сайту. Читається за десять хвилин.","Five short chapters that walk through the main texts of this site. A ten-minute read."],copy:true,
+ ch:[
+ {t:["З чого все починається","Where it all begins"],h:["<p>Ця книжечка — не проповідь і не підручник. Це запрошення повільно прочитати кілька віршів і запитати себе: що тут сказано насправді?</p><p>Перший вірш знають майже всі: «Так полюбив Бог світ…» (Івана 3:16). Зверніть увагу, з чого він починається. Не з людини, не з її провини й не з вимоги. Він починається з любові Бога.</p><p>Наступний вірш додає: Бог послав Сина не судити світ, а спасати. Якщо читати Біблію, тримаючи в серці ці два вірші, багато чого звучить інакше.</p><p class='ask'>Запитання: з чого зазвичай починається моя думка про Бога — з Його любові чи з моєї провини?</p>","<p>This little book is not a sermon and not a textbook. It is an invitation to read a few verses slowly and ask: what is actually said here?</p><p>Nearly everyone knows the first verse: “For God so loved the world…” (John 3:16). Notice where it begins. Not with us, not with our guilt, not with a demand. It begins with God’s love.</p><p>The next verse adds that God sent the Son not to judge the world but to save it. Read the Bible with these two verses in your heart and much of it sounds different.</p><p class='ask'>Question: where does my thinking about God usually begin — with his love or with my guilt?</p>"]},
+ {t:["«Має», а не «матиме»","“Has”, not “will have”"],h:["<p>В Євангелії від Івана Ісус кілька разів говорить про вічне життя в теперішньому часі. «Хто вірить у Мене, має вічне життя» (6:47). «Має… і перейшов від смерті до життя» (5:24).</p><p>Ми звикли думати про вічне життя як про щось, що починається «потім». Але граматика цих віршів проста: має. Уже.</p><p>Пастор Віктор Томєв у своїх проповідях часто зупиняється саме на цьому слові. Докладніше — у розділі «Вічне життя вже зараз», де кожна його думка має позначку джерела.</p><p class='ask'>Запитання: що змінилося б у моєму сьогоднішньому дні, якби вічне життя вже почалося?</p>","<p>In John’s Gospel Jesus speaks of eternal life in the present tense several times. “He who believes in me has eternal life” (6:47). “Has… and has passed out of death into life” (5:24).</p><p>We are used to thinking of eternal life as something that begins “later”. But the grammar of these verses is simple: has. Already.</p><p>Pastor Viktor Tomev often pauses on exactly this word in his sermons. See the section “Eternal Life Now”, where each of his thoughts carries a source label.</p><p class='ask'>Question: what would change in my day today if eternal life has already begun?</p>"]},
+ {t:["Вічне життя — це пізнавати","Eternal life is to know"],h:["<p>Ісус Сам дав визначення: «Вічне життя — це щоб пізнали Тебе, єдиного істинного Бога, і Того, Кого Ти послав, — Ісуса Христа» (Івана 17:3).</p><p>Тут немає слова «місце» і немає слова «колись». Є слово «пізнали». Вічне життя — це стосунки.</p><p>А як пізнати Бога, Якого «ніхто ніколи не бачив»? Іван відповідає одразу: Його явив Син (1:18). Ісус каже Пилипові: «Хто бачив Мене, той бачив Отця» (14:9).</p><p class='ask'>Запитання: що я дізнаюся про Отця, коли дивлюся, як Ісус поводиться з людьми?</p>","<p>Jesus himself gave the definition: “This is eternal life, that they should know you, the only true God, and him whom you sent, Jesus Christ” (John 17:3).</p><p>There is no word “place” here and no word “someday”. There is the word “know”. Eternal life is a relationship.</p><p>And how do we know a God whom “no one has seen at any time”? John answers at once: the Son has declared him (1:18). Jesus tells Philip: “He who has seen me has seen the Father” (14:9).</p><p class='ask'>Question: what do I learn about the Father when I watch how Jesus treats people?</p>"]},
+ {t:["Дар, а не плата","A gift, not wages"],h:["<p>Павло ставить поруч два слова: «плата» і «дар» (Римлян 6:23). Плату заробляють. Дар отримують.</p><p>В Ефесян 2:8–9 він повторює це тричі іншими словами: не від вас, не від діл, щоб ніхто не хвалився. І одразу додає: ми — Його творіння, створені для добрих діл. Добрі діла не зникають; вони просто стають плодом, а не ціною.</p><p>Тому Римлян 8 починається словами: «Тепер немає жодного осуду».</p><p class='ask'>Запитання: що я досі намагаюся заробити з того, що вже подаровано?</p>","<p>Paul sets two words side by side: “wages” and “gift” (Romans 6:23). Wages are earned. A gift is received.</p><p>In Ephesians 2:8–9 he says it three more times in other words: not of yourselves, not of works, that no one would boast. And he adds at once: we are his workmanship, created for good works. Good works do not vanish; they simply become fruit rather than price.</p><p>That is why Romans 8 opens with: “There is therefore now no condemnation.”</p><p class='ask'>Question: what am I still trying to earn that has already been given?</p>"]},
+ {t:["«Чи віриш ти в це?»","“Do you believe this?”"],h:["<p>Біля гробу Лазаря Ісус каже Марті: «Я є воскресіння і життя» (Івана 11:25–26). Не «Я дам», а «Я є».</p><p>І завершує не наказом, а питанням: «Чи віриш ти в це?» Це питання не для іспиту. Воно відчиняє двері.</p><p>Цей сайт не дає готових відповідей замість вас. Він пропонує тексти, джерела й питання. Читайте, порівнюйте, думайте — і нехай слова Ісуса звучать для вас так само світло, як того ранку у Витанії.</p><p class='ask'>Запитання: якою була б моя чесна відповідь Ісусові сьогодні?</p>","<p>At Lazarus’ tomb Jesus says to Martha: “I am the resurrection and the life” (John 11:25–26). Not “I will give” but “I am”.</p><p>And he ends not with a command but with a question: “Do you believe this?” It is not an exam question. It opens a door.</p><p>This site does not give ready answers in your place. It offers texts, sources and questions. Read, compare, think — and may Jesus’ words sound as bright to you as they did that morning in Bethany.</p><p class='ask'>Question: what would my honest answer to Jesus be today?</p>"]}
+ ]},
+{id:"b_ref",cat:"own",ic:"📕",title:["Реформація 2026","Reformation 2026"],author:NVS,
+ desc:["Двомовна книга про вчення пастора Віктора Томєва, побудована на корпусі датованих проповідей і ефірів. Повний текст читається на сторінці книги.","A bilingual book on the teaching of Pastor Viktor Tomev, built on a corpus of dated sermons and broadcasts. The full text is read on the book’s page."],
+ links:[["Читати на itch.io (UA/EN)","https://neonvoidstudio.itch.io/reformatsia-2026-en-uk"]]},
+{id:"b_enc",cat:"own",ic:"📚",title:["Grace-Енциклопедія (Grace Bible AI)","Grace Encyclopedia (Grace Bible AI)"],author:NVS,
+ desc:["Енциклопедія з пошуком за темами, віршами й цитатами.","An encyclopedia searchable by theme, verse and quotation."],
+ links:[["Відкрити на itch.io","https://neonvoidstudio.itch.io/grace-bible-ai-viktor-tomev-edition"]]},
+{id:"b_why",cat:"mini",ic:"🌼",title:["ЧОМУ ЦЕ МОЖЛИВО","WHY IT’S POSSIBLE"],author:NVS,
+ desc:["Міні-книга за проповіддю Віктора Томєва про зміну фокуса: з «чому неможливо» на «чому можливо». 10 розділів.","A mini-book from a sermon by Viktor Tomev about shifting focus from “why it’s impossible” to “why it’s possible”. 10 chapters."],
+ toc:[["Дві породи людей","Two kinds of people"],["Мозок, який шукає","The brain that searches"],["«У нас немає стільки хліба»","“We don’t have that much bread”"],["Петро і сітка з іншого боку","Peter and the net on the other side"],["Іван 11:25–26 — вірш, у якому ми застрягли","John 11:25–26 — the verse we got stuck in"],["Один аргумент проти тисячі причин","One argument against a thousand reasons"],["«Допоможи моєму невірству»","“Help my unbelief”"],["Радій з тими, хто радіє","Rejoice with those who rejoice"],["Що ти даєш — те й повертається","What you give comes back"],["Практика: перемкни фокус сьогодні","Practice: shift your focus today"]],
+ links:[["Українською","https://neonvoidstudio.itch.io/chomy-ce-mozlivo"],["English","https://neonvoidstudio.itch.io/why-its-possible"]]},
+{id:"b_22",cat:"mini",ic:"✉️",title:["22 ДНІ — Благодать за залізними дверима","22 DAYS — Grace Behind Iron Doors"],author:["Проповідь: Віктор Томєв. Упорядкування для читання: Neon Void Studio","Sermon: Viktor Tomev. Arranged for reading: Neon Void Studio"],
+ desc:["Проповідь, виголошена після 22 днів під вартою. 16 розділів про покаяння як зміну мислення.","A sermon preached after 22 days in custody. Sixteen chapters on repentance as a change of mind."],
+ links:[["Українською","https://neonvoidstudio.itch.io/22dni-za-dverima"],["English","https://neonvoidstudio.itch.io/22-days-grace-behind-iron-doors"]]},
+{id:"b_bil",cat:"mini",ic:"💎",title:["Інформація на мільярди","Information Worth Billions"],author:NVS,
+ desc:["36 коротких розділів за відеофрагментами Віктора Томєва.","36 short chapters from Viktor Tomev’s short videos."],
+ links:[["Українською","https://neonvoidstudio.itch.io/informatsiya-na-milyardy"],["English","https://neonvoidstudio.itch.io/information-worth-billions"]]},
+{id:"b_qaf",cat:"mini",ic:"🕊️",title:["Питання. Відповіді. Свобода.","Questions. Answers. Freedom."],author:NVS,
+ desc:["Міні-книга за програмою «Питання та відповіді».","A mini-book from the “Questions and Answers” programme."],
+ links:[["Відкрити на itch.io","https://neonvoidstudio.itch.io/mini-book-bibles"]]},
+{id:"b_light",cat:"mini",ic:"🌞",title:["Батько світла","Father of Light"],author:NVS,soon:true,
+ desc:["12 запитань про Бога, гріх, страх і вічне життя — простими словами.","12 questions about God, sin, fear and eternal life — in plain words."],onlyUk:true},
+{id:"b_good",cat:"mini",ic:"🌻",title:["Бог тільки добрий","God Is Only Good"],author:NVS,soon:true,
+ desc:["За ефіром з архієпископом Сергієм Журавльовим.","From the broadcast with Archbishop Sergei Zhuravlev."],onlyUk:true},
+{id:"b_self",cat:"mini",ic:"🌷",title:["Будь собою","Be Yourself"],author:NVS,soon:true,
+ desc:["За недільною проповіддю про те, щоб нікого не наслідувати.","From a Sunday sermon about not imitating anyone."],onlyUk:true},
+{id:"b_die",cat:"mini",ic:"🗝️",title:["Хто навчив людей помирати?","Who Taught People to Die?"],author:NVS,soon:true,
+ desc:["За недільною проповіддю про розум, правду і вічне життя.","From a Sunday sermon on the mind, truth and eternal life."],onlyUk:true},
+{id:"b_first",cat:"own",ic:"🌸",title:["Бог — перший. Проста книга про благодать","God Is First. A Simple Book About Grace"],author:NVS,soon:true,
+ desc:["Тепла популярна книга про благодать: передмова, 10 розділів і післямова.","A warm, popular book about grace: a preface, 10 chapters and an afterword."],onlyUk:true}
+];
+
+DB.mcats = {praise:["Радісна хвала","Joyful praise"],father:["Любов Отця","The Father’s love"],christ:["Життя в Христі","Life in Christ"],peace:["Мир і свобода","Peace and freedom"],eternal:["Вічне життя","Eternal life"],instr:["Інструментальна музика","Instrumental music"]};
+/* gen = generative Web Audio piece created by this page's code (no recordings) */
+DB.music = [
+{id:"m_morning",cat:"instr",ic:"🌅",title:["Ранкове світло","Morning Light"],lang:"—",desc:["Тиха генеративна мелодія: щоразу звучить трохи інакше. Створюється кодом сторінки, без записів.","A quiet generative melody that sounds slightly different each time. Made by the page’s code, no recordings."],gen:{root:261.63,scale:[0,2,4,7,9,12,14,16],beat:620,wave:"sine"}},
+{id:"m_river",cat:"instr",ic:"🏞️",title:["Річка життя","River of Life"],lang:"—",desc:["Плавні хвилі нот у світлому ладі.","Gentle waves of notes in a bright mode."],gen:{root:196.0,scale:[0,4,7,11,12,14,16,19],beat:480,wave:"triangle"}},
+{id:"m_garden",cat:"peace",ic:"🌿",title:["Тихий сад","Quiet Garden"],lang:"—",desc:["Повільні дзвіночки для читання й роздумів.","Slow bells for reading and reflection."],gen:{root:329.63,scale:[0,2,5,7,9,12,14],beat:900,wave:"sine"}}
+];
+/* ===== DATA 3: Grace School (independent study course; not an official Worthy Life Church programme) ===== */
+/* quiz: first option is the correct one; options are shuffled when shown */
+DB.lessons = [
+{id:"L1",title:["Бог — люблячий Отець","God is a loving Father"],v:["j1_4_8","j1_1_5","jn14_9"],
+ intro:["Усе починається з того, яким ми бачимо Бога. Іван каже коротко: Бог є любов; Бог є світло. А Ісус додає: хто бачив Мене, той бачив Отця.","Everything begins with how we see God. John says it briefly: God is love; God is light. And Jesus adds: he who has seen me has seen the Father."],
+ mat:[{k:"t",src:"q_zh",x:["Бог тільки добрий; справжнього Бога показав Ісус.","God is only good; the true God was shown by Jesus."]},{k:"r",src:"s_die",x:["Хочеш пізнати Отця — дивись на Сина.","If you want to know the Father — look at the Son."]}],
+ ask:[["Яким я бачу Бога?","How do I see God?"],["Що в Ісусі найбільше говорить мені про Отця?","What in Jesus tells me most about the Father?"]],
+ quiz:[
+ {q:["Що сказано про Бога в 1 Івана 4:8?","What does 1 John 4:8 say about God?"],o:[["Бог є любов","God is love"],["Бог є суддя","God is a judge"],["Бог далеко","God is far away"]]},
+ {q:["Що сказано в 1 Івана 1:5?","What does 1 John 1:5 say?"],o:[["Бог є світло, і в Ньому немає темряви","God is light, and in him is no darkness"],["У Бозі є і світло, і темрява","In God there is both light and darkness"],["Бог ховається в темряві","God hides in darkness"]]},
+ {q:["«Хто бачив Мене, той бачив…»","“He who has seen me has seen…”"],o:[["Отця","the Father"],["Мойсея","Moses"],["ангела","an angel"]]},
+ {q:["Хто, за Івана 1:18, явив Бога?","According to John 1:18, who has declared God?"],o:[["Єдинородний Син","The one and only Son"],["Пророки","The prophets"],["Ніхто","No one"]]},
+ {q:["Кого не пізнав той, хто не любить (1 Ів 4:8)?","Whom does the one who doesn’t love not know (1 Jn 4:8)?"],o:[["Бога","God"],["Себе","Himself"],["Закон","The law"]]}]},
+{id:"L2",title:["Ісус Христос і завершена справа","Jesus Christ and the finished work"],v:["rom5_8","jn3_17","rom5_1"],
+ intro:["Христос помер за нас, «коли ми були ще грішниками». Він прийшов не судити, а спасати. Те, що Він зробив, не треба доповнювати — у цьому можна жити.","Christ died for us “while we were yet sinners”. He came not to judge but to save. What he did need not be supplemented — it can be lived in."],
+ mat:[{k:"t",src:"q_zh",x:["Ісус уже все заплатив.","Jesus has already paid everything."]},{k:"r",src:"s_0705",x:["Христос прийшов змінити уявлення людини про себе і про Бога.","Christ came to change people’s view of themselves and of God."]}],
+ ask:[["Що я намагаюся «доплатити»?","What am I trying to “pay extra”?"],["Що означає для мене мир із Богом?","What does peace with God mean to me?"]],
+ quiz:[
+ {q:["Коли Христос помер за нас (Рим 5:8)?","When did Christ die for us (Rom 5:8)?"],o:[["Коли ми були ще грішниками","While we were yet sinners"],["Коли ми виправилися","After we improved"],["Коли ми заслужили","When we deserved it"]]},
+ {q:["Для чого Бог послав Сина у світ (Ів 3:17)?","Why did God send the Son into the world (Jn 3:17)?"],o:[["Щоб світ був спасенний","That the world should be saved"],["Щоб судити світ","To judge the world"],["Щоб дати новий закон","To give a new law"]]},
+ {q:["Що ми маємо, виправдані вірою (Рим 5:1)?","Being justified by faith, what do we have (Rom 5:1)?"],o:[["Мир із Богом","Peace with God"],["Новий борг","A new debt"],["Страх","Fear"]]},
+ {q:["Чим Бог доводить Свою любов (Рим 5:8)?","How does God commend his love (Rom 5:8)?"],o:[["Тим, що Христос помер за нас","In that Christ died for us"],["Суворими вимогами","By strict demands"],["Мовчанням","By silence"]]},
+ {q:["Через Кого ми маємо мир із Богом?","Through whom do we have peace with God?"],o:[["Через Господа Ісуса Христа","Through our Lord Jesus Christ"],["Через власні діла","Through our own works"],["Через Закон","Through the law"]]}]},
+{id:"L3",title:["Що таке благодать?","What is grace?"],v:["eph2_8","jn1_17","rom6_14"],
+ intro:["Благодать — це дар. Не аванс і не кредит, який треба відпрацювати, а подарунок від Того, Хто любить.","Grace is a gift. Not an advance and not a loan to be worked off, but a present from the One who loves."],
+ mat:[{k:"r",src:"s_think",x:["Закон: «роби, щоб тебе прийняли». Благодать: «ти вже прийнятий».","Law: “do, to be accepted”. Grace: “you are already accepted”."]}],
+ ask:[["Де в моєму житті звучить «заслужи»?","Where in my life do I hear “earn it”?"],["Як я приймаю подарунки?","How do I receive gifts?"]],
+ quiz:[
+ {q:["Чим названо спасіння в Ефесян 2:8?","What is salvation called in Ephesians 2:8?"],o:[["Даром Божим","The gift of God"],["Платою","Wages"],["Нагородою за діла","A reward for works"]]},
+ {q:["Через кого прийшли благодать і правда (Ів 1:17)?","Through whom did grace and truth come (Jn 1:17)?"],o:[["Через Ісуса Христа","Through Jesus Christ"],["Через Мойсея","Through Moses"],["Через Іллю","Through Elijah"]]},
+ {q:["Під чим ми, за Римлян 6:14?","What are we under, according to Romans 6:14?"],o:[["Під благодаттю","Under grace"],["Під Законом","Under law"],["Під прокляттям","Under a curse"]]},
+ {q:["Чому спасіння не від діл (Еф 2:9)?","Why is salvation not of works (Eph 2:9)?"],o:[["Щоб ніхто не хвалився","That no one would boast"],["Бо діла шкідливі","Because works are harmful"],["Бо часу мало","Because time is short"]]},
+ {q:["Через кого був даний Закон (Ів 1:17)?","Through whom was the law given (Jn 1:17)?"],o:[["Через Мойсея","Through Moses"],["Через Павла","Through Paul"],["Через Івана","Through John"]]}]},
+{id:"L4",title:["Віра та праведність","Faith and righteousness"],v:["rom5_1","gal2_21","heb11_1"],
+ intro:["Праведність — це не оцінка за поведінку, а дар, прийнятий вірою. А віра — це впевненість у тому, чого ще не видно.","Righteousness is not a grade for behaviour but a gift received by faith. And faith is assurance of what is not yet seen."],
+ mat:[{k:"r",src:"q_sept",x:["Віра здійснює сподіване тут і тепер; вона потрібна, щоб жити.","Faith brings about what is hoped for here and now; it is needed in order to live."]}],
+ ask:[["На що я спираюся, коли почуваюся «недостатнім»?","What do I lean on when I feel “not enough”?"],["У що невидиме я вірю вже сьогодні?","What unseen thing do I already believe today?"]],
+ quiz:[
+ {q:["Чим ми виправдані (Рим 5:1)?","By what are we justified (Rom 5:1)?"],o:[["Вірою","By faith"],["Постом","By fasting"],["Походженням","By ancestry"]]},
+ {q:["Якщо праведність через Закон, то… (Гал 2:21)","If righteousness is through the law, then… (Gal 2:21)"],o:[["Христос помер даремно","Christ died for nothing"],["усе гаразд","all is well"],["Закон досконалий","the law is perfect"]]},
+ {q:["Віра — це впевненість у… (Євр 11:1)","Faith is assurance of… (Heb 11:1)"],o:[["сподіваному","things hoped for"],["минулому","the past"],["власних силах","one’s own strength"]]},
+ {q:["Віра — це доказ… (Євр 11:1)","Faith is proof of… (Heb 11:1)"],o:[["невидимого","things not seen"],["видимого","things seen"],["помилок","mistakes"]]},
+ {q:["Чого Павло не відкидає (Гал 2:21)?","What does Paul not reject (Gal 2:21)?"],o:[["Божої благодаті","The grace of God"],["Радості","Joy"],["Друзів","Friends"]]}]},
+{id:"L5",title:["Покаяння як зміна мислення","Repentance as a change of mind"],v:["rom12_2","php4_8"],
+ intro:["Грецьке слово «метаноя» означає зміну мислення. Це не коло провини, а новий погляд на Бога і на себе.","The Greek word “metanoia” means a change of mind. It is not a circle of guilt but a new view of God and of oneself."],
+ mat:[{k:"r",src:"s_22",x:["Покаяння — це інший спосіб думати про себе і про Бога.","Repentance is a different way of thinking about yourself and about God."]},{k:"r",src:"s_think",x:["Негативну думку не придушують, а замінюють.","A negative thought is not suppressed but replaced."]}],
+ ask:[["Яку думку мені час замінити?","Which thought is it time to replace?"],["Про що «любе і славне» я подумаю сьогодні?","What “lovely and of good report” will I think about today?"]],
+ quiz:[
+ {q:["Чим ми змінюємося (Рим 12:2)?","By what are we transformed (Rom 12:2)?"],o:[["Оновленням розуму","By the renewing of the mind"],["Зміною одягу","By changing clothes"],["Страхом","By fear"]]},
+ {q:["Якою названо волю Божу в Римлян 12:2?","How is God’s will described in Romans 12:2?"],o:[["Доброю, приємною і досконалою","Good, well-pleasing, and perfect"],["Суворою і важкою","Stern and heavy"],["Незбагненною і страшною","Unknowable and fearful"]]},
+ {q:["Про що радить думати Филип’ян 4:8?","What does Philippians 4:8 tell us to think about?"],o:[["Про правдиве, чисте, любе","What is true, pure, lovely"],["Про чужі провини","Other people’s faults"],["Про погані новини","Bad news"]]},
+ {q:["До чого не слід пристосовуватися (Рим 12:2)?","To what should we not be conformed (Rom 12:2)?"],o:[["До цього світу","To this world"],["До любові","To love"],["До правди","To truth"]]},
+ {q:["Що буквально означає «метаноя»?","What does “metanoia” literally mean?"],o:[["Зміна мислення","A change of mind"],["Покарання","Punishment"],["Жертва","Sacrifice"]]}]},
+{id:"L6",title:["Нова ідентичність","A new identity"],v:["cor2_5_17","gal4_6","j1_3_1"],
+ intro:["«Хто в Христі, той нове творіння». Ти вже не раб, а син чи дочка — і спадкоємець.","“If anyone is in Christ, he is a new creation.” You are no longer a bondservant but a son or daughter — and an heir."],
+ mat:[{k:"r",src:"s_0605",x:["Людина — Божий шедевр (Ефесян 2:10). Смирення — думати про себе так, як думає Бог.","A person is God’s masterpiece (Ephesians 2:10). Humility is thinking of yourself the way God does."]},{k:"r",src:"s_0705",x:["Цінність людини в очах Бога ніколи не втрачалася.","A person’s worth in God’s eyes was never lost."]}],
+ ask:[["Як Бог думає про мене?","How does God think of me?"],["Які старі «ярлики» мені вже не належать?","Which old “labels” no longer belong to me?"]],
+ quiz:[
+ {q:["Ким є той, хто в Христі (2 Кор 5:17)?","What is anyone who is in Christ (2 Cor 5:17)?"],o:[["Новим творінням","A new creation"],["Старим боржником","An old debtor"],["Чужинцем","A stranger"]]},
+ {q:["«Ти вже не раб, а…» (Гал 4:7)","“You are no longer a bondservant, but…” (Gal 4:7)"],o:[["син","a son"],["гість","a guest"],["слуга","a servant"]]},
+ {q:["Як ми звемося, за 1 Івана 3:1?","What are we called, according to 1 John 3:1?"],o:[["Дітьми Божими","Children of God"],["Найманцями","Hired hands"],["Мандрівниками","Wanderers"]]},
+ {q:["Якщо син, то й… (Гал 4:7)","If a son, then… (Gal 4:7)"],o:[["спадкоємець Божий","an heir of God"],["боржник","a debtor"],["учень Закону","a student of the law"]]},
+ {q:["Що сталося зі старим (2 Кор 5:17)?","What happened to the old things (2 Cor 5:17)?"],o:[["Минуло","They have passed away"],["Повернулося","They came back"],["Посилилося","They grew stronger"]]}]},
+{id:"L7",title:["Свобода від осуду","Freedom from condemnation"],v:["rom8_1","jn5_24","gal5_1"],
+ intro:["«Тепер немає жодного осуду». Не «майже немає» і не «поки поводишся добре». Свободу, яку дав Христос, варто берегти.","“There is therefore now no condemnation.” Not “almost none” and not “while you behave”. The freedom Christ gave is worth guarding."],
+ mat:[{k:"t",src:"q_zh",x:["Найстрашніший суд уже відбувся — на хресті.","The most fearful judgment has already taken place — at the cross."]}],
+ ask:[["Чий голос я чую, коли засуджую себе?","Whose voice do I hear when I condemn myself?"],["Яке «ярмо» я беру на себе знову?","Which “yoke” do I take on again?"]],
+ quiz:[
+ {q:["Чого немає тим, хто в Христі Ісусі (Рим 8:1)?","What is there none of for those in Christ Jesus (Rom 8:1)?"],o:[["Осуду","Condemnation"],["Радості","Joy"],["Надії","Hope"]]},
+ {q:["Куди не приходить той, хто вірить (Ів 5:24)?","Where does the believer not come (Jn 5:24)?"],o:[["На суд","Into judgment"],["До Отця","To the Father"],["До життя","Into life"]]},
+ {q:["До чого закликає Галатів 5:1?","What does Galatians 5:1 call us to?"],o:[["Стояти у свободі","Stand firm in liberty"],["Повернутися до ярма","Return to the yoke"],["Боятися","Be afraid"]]},
+ {q:["Який закон визволив нас (Рим 8:2)?","Which law made us free (Rom 8:2)?"],o:[["Закон Духа життя","The law of the Spirit of life"],["Закон гріха","The law of sin"],["Закон сильнішого","The law of the strongest"]]},
+ {q:["Хто нас визволив для свободи (Гал 5:1)?","Who has made us free (Gal 5:1)?"],o:[["Христос","Christ"],["Ми самі","We ourselves"],["Обставини","Circumstances"]]}]},
+{id:"L8",title:["Життя в Дусі","Life in the Spirit"],v:["rom8_11","rom8_15","cor2_3_6"],
+ intro:["Дух — не наглядач, а Дух синівства. Він оживляє, а не тисне; Він навчає кликати: «Авва, Отче!»","The Spirit is not an overseer but the Spirit of adoption. He gives life rather than pressure; he teaches us to cry “Abba! Father!”"],
+ mat:[{k:"r",src:"q_zh",x:["Духовне — це все, що несе любов, життя і творення.","What is spiritual is everything that carries love, life and creation."]}],
+ pending:true,
+ ask:[["Що в моєму житті сьогодні «оживляє»?","What in my life “gives life” today?"],["Де я живу за буквою, а не за Духом?","Where do I live by the letter rather than the Spirit?"]],
+ quiz:[
+ {q:["Що робить буква, а що Дух (2 Кор 3:6)?","What does the letter do, and what the Spirit (2 Cor 3:6)?"],o:[["Буква вбиває, Дух оживляє","The letter kills, the Spirit gives life"],["Буква оживляє, Дух вбиває","The letter gives life, the Spirit kills"],["Обидва вбивають","Both kill"]]},
+ {q:["Якого Духа ми отримали (Рим 8:15)?","Which Spirit did we receive (Rom 8:15)?"],o:[["Духа синівства","The Spirit of adoption"],["Духа рабства","The spirit of bondage"],["Духа страху","The spirit of fear"]]},
+ {q:["Що Бог зробить зі смертними тілами (Рим 8:11)?","What will God do to our mortal bodies (Rom 8:11)?"],o:[["Оживить їх Своїм Духом","Give life to them through his Spirit"],["Залишить без уваги","Ignore them"],["Осудить їх","Condemn them"]]},
+ {q:["Служителями якого Завіту ми є (2 Кор 3:6)?","Servants of which covenant are we (2 Cor 3:6)?"],o:[["Нового","The new"],["Старого","The old"],["Жодного","None"]]},
+ {q:["Як ми кличемо Духом синівства?","How do we cry by the Spirit of adoption?"],o:[["«Авва, Отче!»","“Abba! Father!”"],["«Горе нам!»","“Woe to us!”"],["«Хто Ти?»","“Who are you?”"]]}]},
+{id:"L9",title:["Вічне життя","Eternal life"],v:["jn17_3","jn6_47","jn11_25","co15_26"],
+ intro:["Ісус визначає вічне життя як пізнання Бога. І говорить про нього в теперішньому часі: «має».","Jesus defines eternal life as knowing God. And he speaks of it in the present tense: “has”."],
+ mat:[{k:"r",src:"s_life",x:["Вічне життя починається через пізнання Бога, а не через смерть. Смерть — ворог.","Eternal life begins through knowing God, not through death. Death is an enemy."]},{k:"r",src:"s_found",x:["Хто вірить, уже «має» вічне життя.","The one who believes already “has” eternal life."]}],
+ ask:[["Чи віриш ти в це?","Do you believe this?"],["Як я пізнаю Бога в буденних речах?","How do I come to know God in everyday things?"]],
+ quiz:[
+ {q:["Як Ісус визначає вічне життя (Ів 17:3)?","How does Jesus define eternal life (Jn 17:3)?"],o:[["Пізнавати істинного Бога й Ісуса Христа","To know the true God and Jesus Christ"],["Довго жити на небі","To live long in heaven"],["Виконати всі приписи","To keep every regulation"]]},
+ {q:["«Хто вірить у Мене, … вічне життя» (Ів 6:47)","“He who believes in me … eternal life” (Jn 6:47)"],o:[["має","has"],["можливо, отримає","may perhaps get"],["мусить заслужити","must earn"]]},
+ {q:["«Я є воскресіння і…» (Ів 11:25)","“I am the resurrection and…” (Jn 11:25)"],o:[["життя","the life"],["суд","the judgment"],["закон","the law"]]},
+ {q:["Як названо смерть у 1 Коринтян 15:26?","What is death called in 1 Corinthians 15:26?"],o:[["Останнім ворогом","The last enemy"],["Найкращим другом","The best friend"],["Дверима до Бога","The door to God"]]},
+ {q:["Яким питанням Ісус завершив слова до Марти?","With what question did Jesus end his words to Martha?"],o:[["«Чи віриш ти в це?»","“Do you believe this?”"],["«Чому ти плачеш?»","“Why are you weeping?”"],["«Де ви його поклали?»","“Where have you laid him?”"]]}]},
+{id:"L10",title:["Любов і життя в Новому Завіті","Love and life in the New Covenant"],v:["jn13_34","j1_4_18","heb8_13"],
+ intro:["Нова заповідь одна: любіть один одного, як Я полюбив вас. У любові немає страху — і саме так виглядає життя в Новому Завіті.","The new commandment is one: love one another as I have loved you. There is no fear in love — and that is what life in the New Covenant looks like."],
+ mat:[{k:"r",src:"q_zh",x:["Власна заповідь Ісуса одна: «Любіть один одного». Найкраща проповідь — твоє життя.","Jesus’ own commandment is one: “Love one another.” The best sermon is your life."]},{k:"r",src:"q_light",x:["Ми служимо людям у біді — і це ніби для Нього.","We serve people in need — and that is as if for him."]}],
+ ask:[["Кого я можу полюбити ділом цього тижня?","Whom can I love in deed this week?"],["Що для мене означає «як Я полюбив вас»?","What does “as I have loved you” mean to me?"]],
+ quiz:[
+ {q:["Яку заповідь Ісус назвав новою (Ів 13:34)?","Which commandment did Jesus call new (Jn 13:34)?"],o:[["Любіть один одного","Love one another"],["Дотримуйтеся постів","Keep the fasts"],["Уникайте чужих","Avoid strangers"]]},
+ {q:["Чого немає в любові (1 Ів 4:18)?","What is there none of in love (1 Jn 4:18)?"],o:[["Страху","Fear"],["Радості","Joy"],["Сили","Strength"]]},
+ {q:["Що робить досконала любов зі страхом?","What does perfect love do to fear?"],o:[["Проганяє","Casts it out"],["Посилює","Increases it"],["Ховає","Hides it"]]},
+ {q:["Яким названо перший завіт (Євр 8:13)?","What is the first covenant called (Heb 8:13)?"],o:[["Застарілим","Obsolete"],["Вічним","Eternal"],["Єдиним","The only one"]]},
+ {q:["За яким взірцем любити (Ів 13:34)?","After what pattern are we to love (Jn 13:34)?"],o:[["Як Я полюбив вас","As I have loved you"],["Як вам зручно","As is convenient"],["Як велить звичай","As custom requires"]]}]}
+];
+/* ===== APP ===== */
+var I = {
+brandA:["ВІЧНЕ ЖИТТЯ В БЛАГОДАТІ","ETERNAL LIFE IN GRACE"],brandB:["ETERNAL LIFE IN GRACE","ВІЧНЕ ЖИТТЯ В БЛАГОДАТІ"],
+sub:["Бог — люблячий Отець. Життя у Христі. Свобода в благодаті.","God is a loving Father. Life in Christ. Freedom in Grace."],
+nHome:["Головна","Home"],nLib:["Книги","Books"],nSchool:["Школа","School"],nSearch:["Пошук","Search"],nMore:["Меню","Menu"],
+bBooks:["Читати книги","Read books"],bSerm:["Слухати проповіді","Listen to sermons"],bQa:["Питання та відповіді","Questions & answers"],bFather:["Пізнати Отця","Know the Father"],bEternal:["Вічне життя","Eternal life"],bMusic:["Музика благодаті","Music of grace"],bLaw:["Благодать і закон","Grace and law"],bSchool:["Школа благодаті","Grace School"],
+lib:["Бібліотека","Library"],libLead:["Книги для читання з телефона. Для кожної вказано автора.","Books to read on your phone. The author is given for each."],
+serm:["Проповіді Віктора Томєва","Sermons of Viktor Tomev"],sermLead:["Каталог містить лише ті проповіді, зміст яких підтверджено розшифровками. Тексти — перекази, не стенограми.","The catalogue contains only sermons whose content is confirmed by transcripts. The texts are retellings, not verbatim records."],
+qa:["Питання та відповіді","Questions and Answers"],qaLead:["Архів програм Віктора та Світлани Томєвих.","Archive of the programmes of Viktor and Svitlana Tomev."],
+father:["Бог — мій Отець","God Is My Father"],fatherLead:["Вісім тем про любов Бога. У кожній: текст Біблії, пояснення з позначкою джерела, питання для роздумів.","Eight themes on God’s love. Each has Scripture, explanations with a source label, and questions for reflection."],
+eternal:["Вічне життя вже зараз","Eternal Life Now"],eternalLead:["Десять біблійних текстів. У кожному дослідженні окремо показано текст Біблії, пояснення пастора та роздуми проєкту.","Ten Bible passages. Each study shows Scripture, the pastor’s explanation and the project’s reflections separately."],
+law:["Благодать і закон","Grace and Law"],lawLead:["Сім порівнянь за Посланнями до Римлян, Галатів, Ефесян, Коринтян та Євреїв.","Seven comparisons from Romans, Galatians, Ephesians, Corinthians and Hebrews."],
+school:["Школа благодаті","Grace School"],schoolLead:["Десять уроків із тестами. Це самостійний навчальний курс проєкту, а не офіційна програма Worthy Life Church.","Ten lessons with quizzes. This is the project’s independent study course, not an official Worthy Life Church programme."],
+music:["Музика благодаті","Music of Grace"],musicLead:["Тут звучить лише дозволена музика. Свої композиції можна додати в редакторі.","Only permitted music plays here. You can add your own compositions in the editor."],
+search:["Пошук по сайту","Site search"],searchPh:["Слово, тема або посилання…","A word, theme or reference…"],
+more:["Меню","Menu"],marks:["Закладки","Bookmarks"],bible:["Біблійні тексти","Bible texts"],editor:["Редактор матеріалів","Content editor"],about:["Джерела та про проєкт","Sources & about"],settings:["Налаштування","Settings"],
+calm:["Зменшити анімації","Reduce animations"],fsize:["Розмір тексту","Text size"],on:["Увімкнено","On"],off:["Вимкнено","Off"],
+all:["Усе","All"],books:["Книги","Books"],sermons:["Проповіді","Sermons"],verses:["Біблійні тексти","Bible texts"],questions:["Питання","Questions"],topics:["Теми","Themes"],lessons:["Уроки","Lessons"],musicT:["Музика","Music"],
+langF:["Мова пошуку","Search language"],lBoth:["Обидві мови","Both languages"],lUk:["Українська","Ukrainian"],lEn:["Англійська","English"],
+nothing:["Нічого не знайдено.","Nothing found."],typeQ:["Введіть запит, щоб почати пошук.","Type a query to start searching."],
+soon:["Матеріал готується","Material in preparation"],soonTxt:["Текст цієї книги ще не додано на сайт. Його можна додати в редакторі.","The text of this book has not been added to the site yet. It can be added in the editor."],
+noTr:["Немає перевіреного перекладу — показано оригінал","No verified translation — original shown"],
+kq:["Пряма цитата","Direct quote"],kr:["Переказ проповіді","Retelling of a sermon"],kt:["Повторювана тема вчення","Recurring theme of the teaching"],ka:["Авторський роздум","Project’s reflection"],kw:["Очікує джерела","Awaiting source"],kb:["Біблійний текст","Bible text"],
+pendTxt:["Пояснення пастора саме до цього тексту ще не підтверджене джерелом. Додайте його в редакторі, коли матимете запис.","The pastor’s explanation of this particular passage is not yet confirmed by a source. Add it in the editor once you have the recording."],
+src:["Джерело","Source"],trUk:["робочий переклад (не офіційне видання)","working translation (not an official edition)"],trEn:["World English Bible (суспільне надбання)","World English Bible (public domain)"],
+bibleTxt:["Текст Біблії","Scripture"],pastorTxt:["Пояснення пастора","The pastor’s explanation"],reflTxt:["Роздум проєкту","Project’s reflection"],cardsTxt:["Картки","Cards"],checkTxt:["Перевір себе","Check yourself"],askTxt:["Питання для роздумів","Questions for reflection"],sumTxt:["Підсумок","Summary"],relSerm:["Пов’язана проповідь або ефір","Related sermon or broadcast"],
+tapFlip:["торкніться, щоб побачити відповідь","tap to see the answer"],answer:["відповідь","answer"],
+open:["Відкрити","Open"],read:["Читати","Read"],cont:["Продовжити читання","Continue reading"],chapters:["Розділи","Chapters"],toc:["Зміст","Contents"],prev:["← Назад","← Back"],next:["Далі →","Next →"],
+paper:["Теплий папір","Warm paper"],white:["Білий аркуш","White page"],copySel:["Копіювати виділене","Copy selection"],selFirst:["Спершу виділіть короткий уривок.","Select a short passage first."],copied:["Скопійовано","Copied"],copyFail:["Не вдалося скопіювати","Copy failed"],
+author:["Автор","Author"],orig:["Оригінал","Original"],date:["Дата","Date"],dur:["Тривалість","Duration"],olang:["Мова оригіналу","Original language"],trans:["Переклад","Translation"],transNo:["лише робочий переказ","working retelling only"],
+dateNo:["дата не підтверджена","date not confirmed"],titleNo:["Оригінальна назва очікує підтвердження","Original title awaiting confirmation"],
+refs:["Біблійні тексти","Bible references"],sum:["Короткий переказ","Short summary"],pts:["Основні думки","Main points"],video:["Офіційне відео","Official video"],videoNo:["Посилання на офіційне відео ще не підтверджене.","The link to the official video is not yet confirmed."],ytSearch:["Шукати на YouTube за назвою","Search YouTube by title"],
+filterPh:["Фільтр за словом…","Filter by word…"],qPh:["Пошук за питаннями…","Search the questions…"],episodes:["Випуски","Episodes"],qCount:["питань","questions"],noQs:["Перелік питань ще не підтверджено.","The list of questions is not yet confirmed."],
+progress:["Прогрес","Progress"],done:["пройдено","completed"],lesson:["Урок","Lesson"],intro:["Вступ","Introduction"],mat:["Матеріал проповідей","Sermon material"],quiz:["Тест із 5 питань","Five-question quiz"],checkBtn:["Перевірити","Check"],again:["Спробувати ще раз","Try again"],score:["Результат","Score"],best:["найкращий результат","best score"],ansAll:["Дайте відповідь на всі питання.","Answer all the questions."],passed:["Урок зараховано. Чудово!","Lesson completed. Well done!"],retry:["Перечитайте тексти й спробуйте ще раз.","Reread the passages and try again."],
+play:["▶ Слухати","▶ Play"],pause:["❚❚ Пауза","❚❚ Pause"],genNote:["Генеративна музика, створена кодом сторінки","Generative music made by the page’s code"],audioErr:["Не вдалося відтворити аудіо","Could not play the audio"],
+noMarks:["Закладок ще немає. Натисніть ☆ біля тексту, уроку чи розділу.","No bookmarks yet. Tap ☆ next to a text, lesson or chapter."],
+edLead:["Усі зміни зберігаються лише в цьому браузері. Це локальний редактор, а не захищена серверна адмінпанель.","All changes are stored only in this browser. This is a local editor, not a secured server admin panel."],
+edAdd:["Додати","Add"],edSave:["Зберегти","Save"],edCancel:["Скасувати","Cancel"],edDel:["Видалити","Delete"],edEdit:["Редагувати","Edit"],edMine:["Мої матеріали","My materials"],edNone:["Ви ще нічого не додали.","You have not added anything yet."],saved:["Збережено","Saved"],deleted:["Видалено","Deleted"],needTitle:["Вкажіть назву хоча б однією мовою.","Give a title in at least one language."],
+tBook:["Книга","Book"],tSermon:["Проповідь","Sermon"],tQa:["Питання й відповіді","Q&A"],tMusic:["Музика","Music"],tVerse:["Біблійний текст","Bible text"],
+exp:["Експорт та імпорт JSON","JSON export and import"],expBtn:["Експортувати каталог","Export catalogue"],expCopy:["Копіювати JSON","Copy JSON"],impBtn:["Імпортувати з поля","Import from the box"],impFile:["Обрати файл JSON","Choose a JSON file"],impOk:["Імпортовано записів","Records imported"],impBad:["Це не схоже на файл каталогу цього сайту.","This does not look like a catalogue file from this site."],withState:["Разом із закладками та прогресом","Include bookmarks and progress"],
+reset:["Скинути закладки та прогрес","Reset bookmarks and progress"],resetOk:["Скинуто","Reset done"],sure:["Натисніть ще раз для підтвердження","Tap again to confirm"],
+disc:["Незалежний духовно-освітній проєкт, створений на основі вивчення Біблії та матеріалів служіння Віктора Томєва. Не є офіційним сайтом Worthy Life Church.","An independent educational project exploring the Bible and the teachings of Viktor Tomev. Not an official Worthy Life Church website."],
+homeVerse:["Головний вірш проєкту","The project’s key verse"],start:["З чого почати","Where to begin"],
+f_title_uk:["Назва українською","Title in Ukrainian"],f_title_en:["Назва англійською","Title in English"],f_author:["Автор","Author"],f_cat:["Категорія","Category"],f_desc_uk:["Опис українською","Description in Ukrainian"],f_desc_en:["Опис англійською","Description in English"],f_link:["Посилання на оригінал або PDF","Link to the original or PDF"],
+f_text_uk:["Текст українською (розділ починайте рядком «## Назва»)","Text in Ukrainian (start a chapter with a line “## Title”)"],f_text_en:["Текст англійською (той самий порядок розділів)","Text in English (same chapter order)"],
+f_orig:["Оригінальна назва (мовою оригіналу)","Original title (in the original language)"],f_date:["Дата","Date"],f_refs:["Біблійні посилання (через кому)","Bible references (comma-separated)"],f_sum_uk:["Короткий переказ українською","Summary in Ukrainian"],f_sum_en:["Короткий переказ англійською","Summary in English"],f_pts_uk:["Основні думки українською (кожна з нового рядка)","Main points in Ukrainian (one per line)"],f_pts_en:["Основні думки англійською","Main points in English"],f_url:["Посилання на офіційне відео або аудіо","Link to the official video or audio"],f_lang:["Мова оригіналу","Original language"],
+f_qs_uk:["Питання українською: «Питання | Відповідь | Посилання | Таймкод», кожне з нового рядка","Questions in Ukrainian: “Question | Answer | Reference | Timecode”, one per line"],f_qs_en:["Питання англійською (той самий порядок)","Questions in English (same order)"],
+f_ref_uk:["Посилання українською (напр. Івана 3:16)","Reference in Ukrainian"],f_ref_en:["Посилання англійською (e.g. John 3:16)","Reference in English"],f_vt_uk:["Текст українською","Text in Ukrainian"],f_vt_en:["Текст англійською","Text in English"],f_trl:["Назва перекладу Біблії","Name of the Bible translation"],
+custom:["додано вами","added by you"]
+};
+
+var LI = 0;            /* 0 = uk, 1 = en */
+var MISS = false;
+function el(id){return document.getElementById(id);}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function T(p){MISS=false;if(p==null)return "";if(typeof p==="string")return p;var s=p[LI];if(!s){s=p[1-LI]||"";if(s)MISS=true;}return s;}
+function L(k){return I[k]?I[k][LI]:k;}
+function TB(p){var s=esc(T(p));if(MISS)s+=' <span class="tag w">'+esc(L("noTr"))+'</span>';return s;}
+
+var mem = {};
+var store = {
+  get:function(k,d){try{var v=window.localStorage.getItem("elg_"+k);if(v==null)return (k in mem)?mem[k]:d;return JSON.parse(v);}catch(e){return (k in mem)?mem[k]:d;}},
+  set:function(k,v){mem[k]=v;try{window.localStorage.setItem("elg_"+k,JSON.stringify(v));}catch(e){}}
+};
+
+var S = {view:"home",param:null,hist:[],fs:1,calm:false,paper:false,bm:{},prog:{},pos:{},custom:{book:[],sermon:[],qa:[],music:[],verse:[]},
+         sCat:"all",sTxt:"",qTxt:"",srch:"",srType:"all",srLang:"both",edType:"book",edId:null,lbCat:"all",last:null};
+var FS = [15,17,19,22];
+
+function toast(m){var t=el("toast");t.textContent=m;t.className="on";clearTimeout(toast.tm);toast.tm=setTimeout(function(){t.className="";},1900);}
+
+/* ---------- custom content conversion ---------- */
+function lines(s){var a=String(s||"").split(/\r?\n/),o=[],i;for(i=0;i<a.length;i++){if(a[i].replace(/\s+/g,""))o.push(a[i].replace(/^\s+|\s+$/g,""));}return o;}
+function parseCh(txt){
+  var a=String(txt||"").split(/\r?\n/),out=[],cur=null,i,ln;
+  for(i=0;i<a.length;i++){ln=a[i];
+    if(/^##\s+/.test(ln)){cur={t:ln.replace(/^##\s+/,""),b:[]};out.push(cur);}
+    else{if(!cur){if(!ln.replace(/\s+/g,""))continue;cur={t:"",b:[]};out.push(cur);}cur.b.push(ln);}
+  }
+  for(i=0;i<out.length;i++){
+    var paras=out[i].b.join("\n").split(/\n\s*\n/),h="",j;
+    for(j=0;j<paras.length;j++){if(paras[j].replace(/\s+/g,""))h+="<p>"+esc(paras[j].replace(/^\s+|\s+$/g,"")).replace(/\n/g,"<br>")+"</p>";}
+    out[i].h=h;
+  }
+  return out;
+}
+function convBook(c){var r=c.raw,u=parseCh(r.text_uk),e=parseCh(r.text_en),n=Math.max(u.length,e.length),ch=[],i;
+  for(i=0;i<n;i++){ch.push({t:[u[i]?u[i].t:"",e[i]?e[i].t:""],h:[u[i]?u[i].h:"",e[i]?e[i].h:""]});}
+  var b={id:c.id,custom:true,cat:r.cat||"other",ic:"📘",title:[r.title_uk||"",r.title_en||""],author:[r.author||"",r.author||""],desc:[r.desc_uk||"",r.desc_en||""],copy:true};
+  if(ch.length)b.ch=ch;else b.soon=true;
+  if(r.link)b.links=[[L("orig"),r.link]];
+  return b;}
+function convSermon(c){var r=c.raw,pu=lines(r.pts_uk),pe=lines(r.pts_en),n=Math.max(pu.length,pe.length),pts=[],i;
+  for(i=0;i<n;i++)pts.push([pu[i]||"",pe[i]||""]);
+  var rf=String(r.refs||"").split(",").map(function(x){return x.replace(/^\s+|\s+$/g,"");}).filter(function(x){return x;});
+  return {id:c.id,custom:true,title:r.orig||"",tt:[r.title_uk||"",r.title_en||""],date:r.date||"",dur:"",lang:r.lang||"",cats:r.cat?[r.cat]:[],refs:rf,refsEn:rf,sum:[r.sum_uk||"",r.sum_en||""],pts:pts,url:r.url||""};}
+function convQa(c){var r=c.raw,u=lines(r.qs_uk),e=lines(r.qs_en),n=Math.max(u.length,e.length),qs=[],i,a,b;
+  for(i=0;i<n;i++){a=(u[i]||"").split("|");b=(e[i]||"").split("|");
+    qs.push({q:[(a[0]||"").trim(),(b[0]||"").trim()],a:[(a[1]||"").trim(),(b[1]||"").trim()],ref:[(a[2]||"").trim(),(b[2]||"").trim()],tc:(a[3]||b[3]||"").trim()});}
+  return {id:c.id,custom:true,date:r.date||"",title:[r.title_uk||"",r.title_en||""],url:r.url||"",qs:qs};}
+function convMusic(c){var r=c.raw;return {id:c.id,custom:true,cat:r.cat||"praise",ic:"🎵",title:[r.title_uk||"",r.title_en||""],desc:[r.desc_uk||"",r.desc_en||""],lang:r.lang||"",url:r.url||""};}
+function allBooks(){return DB.books.concat(S.custom.book.map(convBook));}
+function allSermons(){return DB.sermons.concat(S.custom.sermon.map(convSermon));}
+function allQa(){return DB.qa.concat(S.custom.qa.map(convQa));}
+function allMusic(){return DB.music.concat(S.custom.music.map(convMusic));}
+function allVerses(){var o={},k,i,c;for(k in DB.verses)o[k]=DB.verses[k];
+  for(i=0;i<S.custom.verse.length;i++){c=S.custom.verse[i];o[c.id]={custom:true,ref:[c.raw.ref_uk||"",c.raw.ref_en||""],t:[c.raw.vt_uk||"",c.raw.vt_en||""],trl:c.raw.trl||""};}
+  return o;}
+function byId(arr,id){for(var i=0;i<arr.length;i++)if(arr[i].id===id)return arr[i];return null;}
+
+/* ---------- small html builders ---------- */
+function star(key){return '<button class="star'+(S.bm[key]?' on':'')+'" data-a="bm" data-p="'+esc(key)+'" aria-label="bookmark">'+(S.bm[key]?'★':'☆')+'</button>';}
+function sec(t){return '<div class="sec"><h2>'+esc(t)+'</h2></div>';}
+function vHTML(id){var V=allVerses(),v=V[id];if(!v)return "";
+  var lab=v.custom?(v.trl||""):(LI===0?L("trUk"):L("trEn"));
+  var tx=esc(T(v.t)),miss=MISS;
+  return '<blockquote class="verse"><p>'+tx+'</p><footer><b>'+esc(T(v.ref))+'</b><span>'+esc(lab)+'</span>'+(miss?'<span class="tag w">'+esc(L("noTr"))+'</span>':'')+
+    '<span style="flex:1"></span><button class="btn ghost sm" data-a="copyv" data-p="'+esc(id)+'">⧉</button>'+star("verse:"+id)+'</footer></blockquote>';}
+function noteHTML(n){var s=DB.src[n.src];
+  return '<div class="note"><span class="tag '+n.k+'">'+esc(L("k"+n.k))+'</span><p>'+esc(T(n.x))+'</p>'+
+    (s?'<button class="srcbtn" data-a="src" data-p="'+esc(n.src)+'">'+esc(L("src"))+': '+esc(T(s))+'</button>':'')+'</div>';}
+function notesHTML(list,pending){var h="",i;for(i=0;i<(list||[]).length;i++)h+=noteHTML(list[i]);
+  if(pending||!(list&&list.length))h+='<div class="pend"><span class="tag w">'+esc(L("kw"))+'</span><br>'+esc(L("pendTxt"))+'</div>';return h;}
+function cardBtn(a,p,ic,title,meta,text,extra){return '<button class="card" data-a="'+a+'" data-p="'+esc(p)+'"><div class="row"><div class="ic">'+ic+'</div><div class="bd"><h3>'+title+'</h3>'+(meta?'<div class="meta">'+meta+'</div>':'')+(text?'<p>'+text+'</p>':'')+(extra||'')+'</div></div></button>';}
+function fmtDate(d){if(!d)return L("dateNo");var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d);if(!m)return d;return m[3]+"."+m[2]+"."+m[1];}
+function shuffled(n,seed){var a=[],i;for(i=0;i<n;i++)a.push((i+seed)%n);return a;}
+function link(u,t,cls){return '<a class="'+(cls||"btn ghost sm")+'" href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(t)+' ↗</a>';}
+
+/* ---------- views ---------- */
+var V = {};
+function heroSVG(){
+  var fl="",pos=[[30,232],[62,246],[96,228],[250,244],[284,230],[330,247],[366,233],[140,250]],i,x,y;
+  for(i=0;i<pos.length;i++){x=pos[i][0];y=pos[i][1];
+    fl+='<g class="sway"><path d="M'+x+' '+(y+14)+' L'+x+' '+y+'" stroke="#4d9a45" stroke-width="2"/>'+
+      (i%3===1?'<circle cx="'+x+'" cy="'+(y-3)+'" r="5" fill="#ffd34d"/><circle cx="'+x+'" cy="'+(y-3)+'" r="2" fill="#e7a50f"/>':
+      '<circle cx="'+(x-4)+'" cy="'+(y-2)+'" r="3.2" fill="#fff"/><circle cx="'+(x+4)+'" cy="'+(y-2)+'" r="3.2" fill="#fff"/><circle cx="'+x+'" cy="'+(y-6)+'" r="3.2" fill="#fff"/><circle cx="'+x+'" cy="'+(y+2)+'" r="3.2" fill="#fff"/><circle cx="'+x+'" cy="'+(y-2)+'" r="2.6" fill="#f5c22b"/>')+'</g>';}
+  var rays="",a;for(i=0;i<12;i++){a=i*30*Math.PI/180;rays+='<line x1="'+(310+Math.cos(a)*44).toFixed(1)+'" y1="'+(70+Math.sin(a)*44).toFixed(1)+'" x2="'+(310+Math.cos(a)*(i%2?62:74)).toFixed(1)+'" y2="'+(70+Math.sin(a)*(i%2?62:74)).toFixed(1)+'" stroke="#ffd95a" stroke-width="4" stroke-linecap="round" opacity=".8"/>';}
+  return '<svg viewBox="0 0 400 270" role="img" aria-label="Sunny morning: sky, meadows, river, flowers"><defs><linearGradient id="gsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd6fb"/><stop offset=".6" stop-color="#e3f5ff"/><stop offset="1" stop-color="#fff8dc"/></linearGradient>'+
+    '<radialGradient id="gsun"><stop offset="0" stop-color="#fffbe0"/><stop offset=".6" stop-color="#ffd84a"/><stop offset="1" stop-color="#f4b31c"/></radialGradient>'+
+    '<linearGradient id="griv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6f1ff"/><stop offset="1" stop-color="#7cc7f2"/></linearGradient></defs>'+
+    '<rect width="400" height="270" fill="url(#gsky)"/><circle cx="310" cy="70" r="80" fill="#fff6c4" opacity=".55"/><g class="rays">'+rays+'</g><circle cx="310" cy="70" r="36" fill="url(#gsun)"/>'+
+    '<g class="cl1" fill="#fff" opacity=".95"><ellipse cx="70" cy="118" rx="34" ry="12"/><ellipse cx="94" cy="110" rx="24" ry="12"/><ellipse cx="52" cy="112" rx="18" ry="9"/></g>'+
+    '<g class="cl2" fill="#fff" opacity=".85"><ellipse cx="205" cy="138" rx="28" ry="9"/><ellipse cx="224" cy="132" rx="18" ry="9"/></g>'+
+    '<path d="M0 190 Q80 150 170 180 T400 165 V270 H0Z" fill="#bfe6a9"/><path d="M0 215 Q110 180 230 208 T400 198 V270 H0Z" fill="#8fd07a"/>'+
+    '<path d="M214 182 C200 200 250 212 215 232 C190 246 170 258 150 270 H262 C262 258 268 246 258 232 C246 214 232 200 224 182Z" fill="url(#griv)"/>'+
+    '<path class="shim" d="M218 190 C212 206 244 216 222 236 C208 248 200 258 196 268" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>'+
+    '<path d="M0 240 Q90 222 160 246 T400 238 V270 H0Z" fill="#6fbf5c" opacity=".55"/>'+fl+'</svg>';}
+V.home=function(){
+  var b=[["lib","📖","bBooks","c1"],["serm","🎙️","bSerm","c2"],["qa","❓","bQa","c3"],["father","❤️","bFather","c2"],["eternal","♾️","bEternal","c1"],["music","🎵","bMusic","c3"]],h,i;
+  h='<div class="hero">'+heroSVG()+'<div class="txt"><h1>'+esc(I.brandA[LI])+'</h1><div class="en">'+esc(I.brandB[LI])+'</div><div class="sub">'+esc(L("sub"))+'</div></div></div><div class="grid">';
+  for(i=0;i<b.length;i++)h+='<button class="big '+b[i][3]+'" data-a="go" data-p="'+b[i][0]+'"><i>'+b[i][1]+'</i>'+esc(L(b[i][2]))+'</button>';
+  h+='</div>'+sec(L("homeVerse"))+vHTML("jn11_25");
+  if(S.last){h+='<button class="btn gold" data-a="golast">'+esc(L("cont"))+'</button>';}
+  h+=sec(L("start"))+cardBtn("go","school","🎓",esc(L("bSchool")),"",esc(L("schoolLead")))+cardBtn("go","law","🌿",esc(L("bLaw")),"",esc(L("lawLead")))+
+     cardBtn("go","about","🧭",esc(L("about")),"","");
+  return h;};
+
+V.lib=function(){
+  var h='<h1>📖 '+esc(L("lib"))+'</h1><p class="lead">'+esc(L("libLead"))+'</p><input type="search" id="fLib" placeholder="'+esc(L("filterPh"))+'" value="'+esc(S.sTxt2||"")+'"><div class="chips">',k;
+  h+='<button class="chip'+(S.lbCat==="all"?' on':'')+'" data-a="lbcat" data-p="all">'+esc(L("all"))+'</button>';
+  for(k in DB.bcats)h+='<button class="chip'+(S.lbCat===k?' on':'')+'" data-a="lbcat" data-p="'+k+'">'+esc(T(DB.bcats[k]))+'</button>';
+  return h+'</div><div id="list"></div>';};
+function libList(){var a=allBooks(),h="",i,b,q=(S.sTxt2||"").toLowerCase(),cls=["","g","n"];
+  for(i=0;i<a.length;i++){b=a[i];if(S.lbCat!=="all"&&b.cat!==S.lbCat)continue;
+    if(q&&(b.title[0]+" "+b.title[1]+" "+T(b.author)).toLowerCase().indexOf(q)<0)continue;
+    h+='<button class="card" data-a="book" data-p="'+esc(b.id)+'"><div class="row"><div class="cover '+cls[i%3]+'">'+(b.ic||"📘")+'</div><div class="bd"><h3>'+TB(b.title)+'</h3><div class="meta">'+esc(T(b.author))+'</div><p>'+esc(T(b.desc))+'</p>'+
+      (b.soon?'<span class="tag w">'+esc(L("soon"))+'</span>':'')+(b.custom?'<span class="tag a">'+esc(L("custom"))+'</span>':'')+(b.onlyUk&&LI===1?'<span class="tag w">'+esc(L("lUk"))+'</span>':'')+'</div></div></button>';}
+  return h||'<div class="empty">'+esc(L("nothing"))+'</div>';}
+V.book=function(id){var b=byId(allBooks(),id);if(!b)return V.lib();var h,i,p=S.pos[id];
+  h='<div class="headrow"><h1>'+(b.ic||"📘")+' '+TB(b.title)+'</h1>'+star("book:"+id)+'</div><p class="meta" style="color:var(--dim)"><b>'+esc(L("author"))+':</b> '+esc(T(b.author))+'</p><p>'+esc(T(b.desc))+'</p>';
+  if(b.onlyUk&&LI===1)h+='<p><span class="tag w">'+esc(L("noTr"))+'</span></p>';
+  if(b.ch){h+='<div>'+(p?'<button class="btn gold" data-a="read" data-p="'+esc(id)+'|'+p.ch+'">'+esc(L("cont"))+'</button>':'')+'<button class="btn" data-a="read" data-p="'+esc(id)+'|0">'+esc(L("read"))+'</button></div>'+sec(L("chapters"));
+    for(i=0;i<b.ch.length;i++)h+=cardBtn("read",id+"|"+i,String(i+1),TB(b.ch[i].t)||esc(L("chapters")+" "+(i+1)),"","");}
+  else{
+    if(b.toc){h+=sec(L("toc"))+'<ol class="pts">';for(i=0;i<b.toc.length;i++)h+='<li>'+esc(T(b.toc[i]))+'</li>';h+='</ol>';}
+    if(b.soon)h+='<div class="empty"><b>'+esc(L("soon"))+'</b><br>'+esc(L("soonTxt"))+'</div>';
+  }
+  if(b.links){h+=sec(L("orig"))+'<div>';for(i=0;i<b.links.length;i++)h+=link(b.links[i][1],b.links[i][0],"btn ghost");h+='</div>';}
+  return h;};
+V.read=function(p){var a=String(p).split("|"),id=a[0],n=parseInt(a[1],10)||0,b=byId(allBooks(),id);if(!b||!b.ch)return V.lib();
+  if(n<0)n=0;if(n>=b.ch.length)n=b.ch.length-1;var c=b.ch[n],bk="book:"+id+":"+n,tt=T(c.t),body=T(c.h),miss=MISS;
+  S.last=["read",id+"|"+n];store.set("last",S.last);
+  var h='<div class="tools"><button class="btn ghost sm" data-a="book" data-p="'+esc(id)+'">☰ '+esc(L("toc"))+'</button><button class="btn ghost sm" data-a="fs" data-p="-1">A−</button><button class="btn ghost sm" data-a="fs" data-p="1">A+</button>'+
+    '<button class="btn ghost sm" data-a="paper">'+esc(S.paper?L("white"):L("paper"))+'</button>'+(b.copy?'<button class="btn ghost sm" data-a="copysel" data-p="'+esc(id)+'">⧉ '+esc(L("copySel"))+'</button>':'')+star(bk)+'</div>'+
+    '<div class="meta" style="color:var(--dim);font-size:.82em;margin-bottom:6px">'+esc(T(b.title))+' · '+(n+1)+' / '+b.ch.length+'</div>'+
+    '<article class="reader'+(S.paper?' paper':'')+'" id="reader"><h1>'+esc(tt||(L("chapters")+" "+(n+1)))+'</h1>'+(miss?'<p><span class="tag w">'+esc(L("noTr"))+'</span></p>':'')+body+'</article><div style="margin-top:12px;display:flex;justify-content:space-between;gap:8px">'+
+    '<button class="btn ghost" data-a="read" data-p="'+esc(id)+'|'+(n-1)+'"'+(n===0?' disabled':'')+'>'+esc(L("prev"))+'</button><button class="btn" data-a="read" data-p="'+esc(id)+'|'+(n+1)+'"'+(n===b.ch.length-1?' disabled':'')+'>'+esc(L("next"))+'</button></div>';
+  return h;};
+
+V.serm=function(){var h='<h1>🎙️ '+esc(L("serm"))+'</h1><p class="lead">'+esc(L("sermLead"))+'</p><input type="search" id="fSerm" placeholder="'+esc(L("filterPh"))+'" value="'+esc(S.sTxt)+'"><div class="chips"><button class="chip'+(S.sCat==="all"?' on':'')+'" data-a="scat" data-p="all">'+esc(L("all"))+'</button>',k;
+  for(k in DB.cats)h+='<button class="chip'+(S.sCat===k?' on':'')+'" data-a="scat" data-p="'+k+'">'+esc(T(DB.cats[k]))+'</button>';
+  return h+'</div><div id="list"></div>';};
+function sermTitle(s){var t=T(s.tt);if(!t)t=s.title;return t;}
+function sermList(){var a=allSermons(),h="",i,s,q=S.sTxt.toLowerCase(),blob,cn,j;
+  for(i=0;i<a.length;i++){s=a[i];if(S.sCat!=="all"&&s.cats.indexOf(S.sCat)<0)continue;
+    blob=s.title+" "+s.tt[0]+" "+s.tt[1]+" "+s.sum[0]+" "+s.sum[1]+" "+s.refs.join(" ")+" "+(s.refsEn||[]).join(" ");for(j=0;j<(s.pts||[]).length;j++)blob+=" "+s.pts[j][0]+" "+s.pts[j][1];blob=blob.toLowerCase();if(q&&blob.indexOf(q)<0)continue;
+    cn="";for(j=0;j<s.cats.length;j++)if(DB.cats[s.cats[j]])cn+='<span class="tag t">'+esc(T(DB.cats[s.cats[j]]))+'</span>';
+    h+=cardBtn("sermon",s.id,"🎙️",esc(sermTitle(s)),esc(fmtDate(s.date))+(s.dur?' · '+esc(s.dur):''),esc(T(s.sum)),'<div style="margin-top:6px">'+cn+(s.custom?'<span class="tag a">'+esc(L("custom"))+'</span>':'')+'</div>');}
+  return h||'<div class="empty">'+esc(L("nothing"))+'</div>';}
+V.sermon=function(id){var s=byId(allSermons(),id);if(!s)return V.serm();var h,i,rf=(LI===1&&s.refsEn&&s.refsEn.length)?s.refsEn:s.refs;
+  h='<div class="headrow"><h1>🎙️ '+esc(sermTitle(s))+'</h1>'+star("sermon:"+id)+'</div>';
+  h+='<div class="note"><p><b>'+esc(L("orig"))+':</b> '+(s.title?esc(s.title):'<span class="tag w">'+esc(L("titleNo"))+'</span>')+'</p><p><b>'+esc(L("date"))+':</b> '+esc(fmtDate(s.date))+(s.dur?' · <b>'+esc(L("dur"))+':</b> '+esc(s.dur):'')+'</p><p><b>'+esc(L("olang"))+':</b> '+esc(s.lang==="ru"?(LI?"Russian":"російська"):(s.lang||"—"))+' · <b>'+esc(L("trans"))+':</b> '+esc(L("transNo"))+'</p></div>';
+  if(rf.length)h+=sec(L("refs"))+'<p>'+esc(rf.join("; "))+'</p>';
+  h+=sec(L("sum"))+'<div class="note"><span class="tag r">'+esc(L("kr"))+'</span><p>'+TB(s.sum)+'</p></div>';
+  if(s.pts&&s.pts.length){h+=sec(L("pts"))+'<ul class="pts">';for(i=0;i<s.pts.length;i++)h+='<li>'+TB(s.pts[i])+'</li>';h+='</ul>';}
+  h+=sec(L("video"));
+  if(s.url)h+=link(s.url,L("video"),"btn");
+  else{h+='<div class="pend">'+esc(L("videoNo"))+'</div>';if(s.title)h+=link("https://www.youtube.com/results?search_query="+encodeURIComponent(s.title+" Виктор Томев"),L("ytSearch"),"btn ghost");}
+  if(s.links){for(i=0;i<s.links.length;i++)h+=link(s.links[i][1],s.links[i][0],"btn ghost");}
+  return h;};
+
+V.qa=function(){return '<h1>❓ '+esc(L("qa"))+'</h1><p class="lead">'+esc(L("qaLead"))+'</p><input type="search" id="fQa" placeholder="'+esc(L("qPh"))+'" value="'+esc(S.qTxt)+'"><div id="list"></div>';};
+function qaList(){var a=allQa(),h="",i,j,e,q=S.qTxt.toLowerCase(),it,found=0;
+  if(!q){h+=sec(L("episodes"));for(i=0;i<a.length;i++){e=a[i];h+=cardBtn("qaitem",e.id,"❓",TB(e.title),esc(fmtDate(e.date))+' · '+e.qs.length+' '+esc(L("qCount")),"",e.custom?'<span class="tag a">'+esc(L("custom"))+'</span>':'');}return h;}
+  for(i=0;i<a.length;i++){e=a[i];for(j=0;j<e.qs.length;j++){it=e.qs[j];
+    if((it.q[0]+" "+it.q[1]+" "+it.a[0]+" "+it.a[1]).toLowerCase().indexOf(q)<0)continue;found++;
+    h+=cardBtn("qaitem",e.id,"💬",esc(T(it.q)),esc(T(e.title)),esc(T(it.a)));}}
+  return found?h:'<div class="empty">'+esc(L("nothing"))+'</div>';}
+V.qaitem=function(id){var e=byId(allQa(),id);if(!e)return V.qa();var h,i,it,r;
+  h='<div class="headrow"><h1>❓ '+TB(e.title)+'</h1>'+star("qa:"+id)+'</div><p style="color:var(--dim)"><b>'+esc(L("date"))+':</b> '+esc(fmtDate(e.date))+(e.dur?' · '+esc(e.dur):'')+'</p>';
+  if(e.note)h+='<div class="note"><p>'+esc(T(e.note))+'</p></div>';
+  if(e.url)h+=link(e.url,L("video"),"btn");else h+='<div class="pend">'+esc(L("videoNo"))+'</div>';
+  if(e.links)for(i=0;i<e.links.length;i++)h+=link(e.links[i][1],e.links[i][0],"btn ghost");
+  h+=sec(L("questions"));
+  if(!e.qs.length)h+='<div class="empty"><span class="tag w">'+esc(L("kw"))+'</span><br>'+esc(L("noQs"))+'</div>';
+  for(i=0;i<e.qs.length;i++){it=e.qs[i];r=it.ref?T(it.ref):"";
+    h+='<div class="note"><h3>'+(i+1)+'. '+TB(it.q)+'</h3><span class="tag r">'+esc(L("kr"))+'</span><p>'+TB(it.a)+'</p>'+(r?'<div class="meta" style="font-size:.84em;color:var(--gold-d)">📖 '+esc(r)+'</div>':'')+(it.tc?'<div class="meta" style="font-size:.84em;color:var(--dim)">⏱ '+esc(it.tc)+'</div>':'')+'</div>';}
+  return h;};
+
+V.father=function(){var h='<h1>❤️ '+esc(L("father"))+'</h1><p class="lead">'+esc(L("fatherLead"))+'</p>',i,f;
+  for(i=0;i<DB.father.length;i++){f=DB.father[i];h+=cardBtn("ftopic",f.id,f.ic,esc(T(f.title)),"",esc(T(f.sum)));}return h;};
+V.ftopic=function(id){var f=byId(DB.father,id);if(!f)return V.father();var h,i,s;
+  h='<div class="headrow"><h1>'+f.ic+' '+esc(T(f.title))+'</h1>'+star("father:"+id)+'</div>'+sec(L("bibleTxt"));
+  for(i=0;i<f.v.length;i++)h+=vHTML(f.v[i]);
+  h+=sec(L("pastorTxt"))+notesHTML(f.pastor)+sec(L("askTxt"))+'<ul class="pts">';
+  for(i=0;i<f.ask.length;i++)h+='<li>'+esc(T(f.ask[i]))+'</li>';
+  h+='</ul>';s=DB.src[f.sermon];
+  if(s)h+=sec(L("relSerm"))+cardBtn("src",f.sermon,"🎙️",esc(T(s)),"","");
+  h+=sec(L("sumTxt"))+'<div class="note" style="background:var(--green-l);border-color:#cfe8c6"><span class="tag a">'+esc(L("ka"))+'</span><p><b>'+esc(T(f.sum))+'</b></p></div>';
+  return h;};
+
+V.eternal=function(){var h='<h1>♾️ '+esc(L("eternal"))+'</h1><p class="lead">'+esc(L("eternalLead"))+'</p>',i,e,V2=allVerses(),r,j;
+  for(i=0;i<DB.eternal.length;i++){e=DB.eternal[i];r=[];for(j=0;j<e.v.length;j++)r.push(T(V2[e.v[j]].ref));
+    h+=cardBtn("study",e.id,String(i+1),esc(T(e.title)),esc(r.join("; ")),"");}return h;};
+function checkHTML(c,qi,seed,key){var ord=shuffled(c.o.length,seed),h='<div class="qz" data-q="'+qi+'"><h3>'+esc(T(c.q))+'</h3>',k;
+  for(k=0;k<ord.length;k++)h+='<button class="opt" data-a="'+key+'" data-p="'+qi+'|'+ord[k]+'">'+esc(T(c.o[ord[k]]))+'</button>';return h+'</div>';}
+V.study=function(id){var e=byId(DB.eternal,id);if(!e)return V.eternal();var h,i;
+  h='<div class="headrow"><h1>♾️ '+esc(T(e.title))+'</h1>'+star("study:"+id)+'</div>'+sec(L("bibleTxt"));
+  for(i=0;i<e.v.length;i++)h+=vHTML(e.v[i]);
+  h+=sec(L("pastorTxt"))+notesHTML(e.pastor,e.pending);
+  h+=sec(L("reflTxt"))+'<div class="note" style="background:var(--yel);border-color:#f1e2a6"><span class="tag a">'+esc(L("ka"))+'</span><p>'+esc(T(e.reflect))+'</p></div>';
+  h+=sec(L("cardsTxt"));
+  for(i=0;i<e.cards.length;i++)h+='<button class="flip" data-a="flip" data-f="'+esc(T(e.cards[i][0]))+'" data-b="'+esc(T(e.cards[i][1]))+'"><small>'+esc(L("tapFlip"))+'</small><span>'+esc(T(e.cards[i][0]))+'</span></button>';
+  h+=sec(L("checkTxt"));
+  for(i=0;i<e.check.length;i++)h+=checkHTML(e.check[i],i,i+1,"self");
+  return h;};
+
+V.law=function(){var h='<h1>🌿 '+esc(L("law"))+'</h1><p class="lead">'+esc(L("lawLead"))+'</p>',i,l;
+  for(i=0;i<DB.law.length;i++){l=DB.law[i];h+=cardBtn("lawitem",l.id,"⚖️",esc(T(l.title)),"","");}return h;};
+V.lawitem=function(id){var l=byId(DB.law,id);if(!l)return V.law();var h,i;
+  h='<div class="headrow"><h1>🌿 '+esc(T(l.title))+'</h1>'+star("law:"+id)+'</div><span class="tag a">'+esc(L("ka"))+'</span><div class="cmp"><div><h3>'+esc(T(l.a))+'</h3><ul>';
+  for(i=0;i<l.ap.length;i++)h+='<li>'+esc(T(l.ap[i]))+'</li>';h+='</ul></div><div class="b"><h3>'+esc(T(l.b))+'</h3><ul>';
+  for(i=0;i<l.bp.length;i++)h+='<li>'+esc(T(l.bp[i]))+'</li>';h+='</ul></div></div>'+sec(L("bibleTxt"));
+  for(i=0;i<l.v.length;i++)h+=vHTML(l.v[i]);
+  return h+sec(L("pastorTxt"))+notesHTML(l.pastor);};
+
+function doneCount(){var n=0,i;for(i=0;i<DB.lessons.length;i++)if(S.prog[DB.lessons[i].id]&&S.prog[DB.lessons[i].id].done)n++;return n;}
+V.school=function(){var n=doneCount(),t=DB.lessons.length,h,i,l,p;
+  h='<h1>🎓 '+esc(L("school"))+'</h1><p class="lead">'+esc(L("schoolLead"))+'</p><div><b>'+esc(L("progress"))+':</b> '+n+' / '+t+' '+esc(L("done"))+'</div><div class="bar"><i style="width:'+Math.round(n/t*100)+'%"></i></div>';
+  for(i=0;i<t;i++){l=DB.lessons[i];p=S.prog[l.id];
+    h+=cardBtn("lesson",l.id,p&&p.done?"✅":String(i+1),esc(L("lesson")+" "+(i+1)+". "+T(l.title)),p?esc(L("best"))+': '+p.best+' / 5':"","");}
+  return h;};
+var QZ={};
+V.lesson=function(id){var l=byId(DB.lessons,id);if(!l)return V.school();var h,i,n=DB.lessons.indexOf(l);QZ={id:id,sel:{},checked:false};
+  S.last=["lesson",id];store.set("last",S.last);
+  h='<div class="headrow"><h1>🎓 '+esc(L("lesson")+" "+(n+1)+". "+T(l.title))+'</h1>'+star("lesson:"+id)+'</div>'+sec(L("intro"))+'<p>'+esc(T(l.intro))+'</p>'+sec(L("bibleTxt"));
+  for(i=0;i<l.v.length;i++)h+=vHTML(l.v[i]);
+  h+=sec(L("mat"))+notesHTML(l.mat,l.pending)+sec(L("askTxt"))+'<ul class="pts">';
+  for(i=0;i<l.ask.length;i++)h+='<li>'+esc(T(l.ask[i]))+'</li>';
+  h+='</ul>'+sec(L("quiz"))+'<div id="quiz">';
+  for(i=0;i<l.quiz.length;i++)h+=checkHTML(l.quiz[i],i,i+n,"qsel");
+  h+='</div><div id="qres"></div><button class="btn" data-a="qcheck">'+esc(L("checkBtn"))+'</button>';
+  if(n<DB.lessons.length-1)h+='<button class="btn ghost" data-a="lesson" data-p="'+DB.lessons[n+1].id+'">'+esc(L("next"))+'</button>';
+  return h;};
+
+V.music=function(){var h='<h1>🎵 '+esc(L("music"))+'</h1><p class="lead">'+esc(L("musicLead"))+'</p>',a=allMusic(),k,i,m,any;
+  for(k in DB.mcats){h+=sec(T(DB.mcats[k]));any=false;
+    for(i=0;i<a.length;i++){m=a[i];if(m.cat!==k)continue;any=true;
+      h+='<div class="card'+(PL.id===m.id?' playing':'')+'" id="trk_'+esc(m.id)+'"><div class="row"><div class="cover '+(m.gen?'n':'g')+'">'+(m.ic||"🎵")+'</div><div class="bd"><h3>'+TB(m.title)+'</h3><div class="meta">'+(m.gen?esc(L("genNote")):esc(m.lang||""))+(m.custom?' · '+esc(L("custom")):'')+'</div><p>'+esc(T(m.desc))+'</p>'+
+        '<button class="btn sm" data-a="play" data-p="'+esc(m.id)+'">'+esc(PL.id===m.id?L("pause"):L("play"))+'</button>'+(m.url?link(m.url,L("orig")):'')+'</div></div></div>';}
+    if(!any)h+='<div class="empty">'+esc(L("soon"))+'</div>';}
+  return h;};
+
+V.search=function(){var types=[["all","all"],["book","books"],["sermon","sermons"],["verse","verses"],["qa","questions"],["topic","topics"],["lesson","lessons"]],h,i;
+  h='<h1>🔎 '+esc(L("search"))+'</h1><input type="search" id="fSearch" placeholder="'+esc(L("searchPh"))+'" value="'+esc(S.srch)+'"><div class="chips">';
+  for(i=0;i<types.length;i++)h+='<button class="chip'+(S.srType===types[i][0]?' on':'')+'" data-a="srtype" data-p="'+types[i][0]+'">'+esc(L(types[i][1]))+'</button>';
+  h+='</div><label for="fLang">'+esc(L("langF"))+'</label><select id="fLang"><option value="both"'+(S.srLang==="both"?" selected":"")+'>'+esc(L("lBoth"))+'</option><option value="uk"'+(S.srLang==="uk"?" selected":"")+'>'+esc(L("lUk"))+'</option><option value="en"'+(S.srLang==="en"?" selected":"")+'>'+esc(L("lEn"))+'</option></select><div id="list"></div>';
+  return h;};
+function strip(s){return String(s||"").replace(/<[^>]+>/g," ");}
+function buildIndex(){var ix=[],i,j,a,x,V2=allVerses(),k,u,e;
+  function add(type,act,p,title,text,ic){ix.push({type:type,a:act,p:p,t:title,x:text,ic:ic});}
+  a=allBooks();for(i=0;i<a.length;i++){x=a[i];add("book","book",x.id,x.title,[x.desc[0]+" "+T(x.author),x.desc[1]+" "+T(x.author)],"📖");
+    if(x.ch)for(j=0;j<x.ch.length;j++)add("book","read",x.id+"|"+j,[x.title[0]+" — "+x.ch[j].t[0],x.title[1]+" — "+x.ch[j].t[1]],[strip(x.ch[j].h[0]),strip(x.ch[j].h[1])],"📖");}
+  a=allSermons();for(i=0;i<a.length;i++){x=a[i];u="";e="";for(j=0;j<(x.pts||[]).length;j++){u+=" "+x.pts[j][0];e+=" "+x.pts[j][1];}
+    add("sermon","sermon",x.id,[x.tt[0]||x.title,x.tt[1]||x.title],[x.title+" "+x.sum[0]+u+" "+x.refs.join(" "),x.title+" "+x.sum[1]+e+" "+(x.refsEn||[]).join(" ")],"🎙️");}
+  for(k in V2){x=V2[k];add("verse","verse",k,x.ref,x.t,"📜");}
+  a=allQa();for(i=0;i<a.length;i++){x=a[i];add("qa","qaitem",x.id,x.title,[x.note?x.note[0]:"",x.note?x.note[1]:""],"❓");
+    for(j=0;j<x.qs.length;j++)add("qa","qaitem",x.id,x.qs[j].q,[x.qs[j].a[0]+" "+(x.qs[j].ref?x.qs[j].ref[0]:""),x.qs[j].a[1]+" "+(x.qs[j].ref?x.qs[j].ref[1]:"")],"💬");}
+  function notes(n){var u2="",e2="",q;for(q=0;q<(n||[]).length;q++){u2+=" "+n[q].x[0];e2+=" "+n[q].x[1];}return [u2,e2];}
+  for(i=0;i<DB.father.length;i++){x=DB.father[i];u=notes(x.pastor);add("topic","ftopic",x.id,x.title,[x.sum[0]+u[0],x.sum[1]+u[1]],"❤️");}
+  for(i=0;i<DB.eternal.length;i++){x=DB.eternal[i];u=notes(x.pastor);add("topic","study",x.id,x.title,[x.reflect[0]+u[0],x.reflect[1]+u[1]],"♾️");}
+  for(i=0;i<DB.law.length;i++){x=DB.law[i];u=notes(x.pastor);add("topic","lawitem",x.id,x.title,u,"🌿");}
+  for(i=0;i<DB.lessons.length;i++){x=DB.lessons[i];u=notes(x.mat);add("lesson","lesson",x.id,x.title,[x.intro[0]+u[0],x.intro[1]+u[1]],"🎓");}
+  return ix;}
+function searchList(){var q=S.srch.toLowerCase().replace(/^\s+|\s+$/g,"");if(!q)return '<div class="empty">'+esc(L("typeQ"))+'</div>';
+  var words=q.split(/\s+/),ix=buildIndex(),h="",n=0,i,r,blob,ok,w,sn,pos,src;
+  for(i=0;i<ix.length&&n<60;i++){r=ix[i];if(S.srType!=="all"&&r.type!==S.srType)continue;
+    blob=S.srLang==="uk"?(r.t[0]+" "+r.x[0]):S.srLang==="en"?(r.t[1]+" "+r.x[1]):(r.t[0]+" "+r.t[1]+" "+r.x[0]+" "+r.x[1]);blob=blob.toLowerCase();
+    ok=true;for(w=0;w<words.length;w++)if(blob.indexOf(words[w])<0){ok=false;break;}if(!ok)continue;n++;
+    src=T(r.x);pos=src.toLowerCase().indexOf(words[0]);sn=pos<0?src.slice(0,110):(pos>40?"…":"")+src.slice(Math.max(0,pos-40),pos+90);
+    h+=cardBtn(r.a,r.p,r.ic,esc(T(r.t)),"",esc(sn)+(src.length>110?"…":""));}
+  return n?h:'<div class="empty">'+esc(L("nothing"))+'</div>';}
+V.verse=function(id){var v=allVerses()[id];if(!v)return V.bible();return '<h1>📜 '+esc(T(v.ref))+'</h1>'+vHTML(id);};
+V.bible=function(){var V2=allVerses(),k,h='<h1>📜 '+esc(L("bible"))+'</h1><p class="lead">'+esc(LI===0?L("trUk"):L("trEn"))+'</p>';for(k in V2)h+=vHTML(k);return h;};
+
+V.more=function(){var m=[["serm","🎙️","serm"],["qa","❓","qa"],["father","❤️","father"],["eternal","♾️","eternal"],["law","🌿","law"],["music","🎵","music"],["bible","📜","bible"],["marks","★","marks"],["editor","✏️","editor"],["about","🧭","about"]],h='<h1>☰ '+esc(L("more"))+'</h1><div class="grid">',i;
+  for(i=0;i<m.length;i++)h+='<button class="big c'+(i%3+1)+'" data-a="go" data-p="'+m[i][0]+'"><i>'+m[i][1]+'</i>'+esc(L(m[i][2]))+'</button>';
+  h+='</div>'+sec(L("settings"))+'<div class="card"><div class="sw"><b>'+esc(L("calm"))+'</b><button class="btn ghost sm" style="margin:0" data-a="calm">'+esc(S.calm?L("on"):L("off"))+'</button></div></div>'+
+    '<div class="card"><div class="sw"><b>'+esc(L("fsize"))+'</b><span><button class="btn ghost sm" style="margin:0" data-a="fs" data-p="-1">A−</button> <button class="btn ghost sm" style="margin:0" data-a="fs" data-p="1">A+</button></span></div></div>'+
+    '<button class="btn ghost" data-a="reset">'+esc(L("reset"))+'</button>';
+  return h;};
+V.marks=function(){var h='<h1>★ '+esc(L("marks"))+'</h1>',k,a,n=0,x,V2=allVerses(),b;
+  for(k in S.bm){a=k.split(":");x=null;
+    if(a[0]==="verse"&&V2[a[1]])x=cardBtn("verse",a[1],"📜",esc(T(V2[a[1]].ref)),"",esc(T(V2[a[1]].t)));
+    else if(a[0]==="study"&&(b=byId(DB.eternal,a[1])))x=cardBtn("study",a[1],"♾️",esc(T(b.title)),"","");
+    else if(a[0]==="father"&&(b=byId(DB.father,a[1])))x=cardBtn("ftopic",a[1],"❤️",esc(T(b.title)),"","");
+    else if(a[0]==="law"&&(b=byId(DB.law,a[1])))x=cardBtn("lawitem",a[1],"🌿",esc(T(b.title)),"","");
+    else if(a[0]==="lesson"&&(b=byId(DB.lessons,a[1])))x=cardBtn("lesson",a[1],"🎓",esc(T(b.title)),"","");
+    else if(a[0]==="sermon"&&(b=byId(allSermons(),a[1])))x=cardBtn("sermon",a[1],"🎙️",esc(sermTitle(b)),"","");
+    else if(a[0]==="qa"&&(b=byId(allQa(),a[1])))x=cardBtn("qaitem",a[1],"❓",esc(T(b.title)),"","");
+    else if(a[0]==="book"&&(b=byId(allBooks(),a[1]))){if(a.length>2&&b.ch&&b.ch[+a[2]])x=cardBtn("read",a[1]+"|"+a[2],"📖",esc(T(b.title)),esc(T(b.ch[+a[2]].t)),"");else x=cardBtn("book",a[1],"📖",esc(T(b.title)),"","");}
+    if(x){h+=x;n++;}}
+  return n?h:h+'<div class="empty">'+esc(L("noMarks"))+'</div>';};
+
+V.about=function(){var k,h='<h1>🧭 '+esc(L("about"))+'</h1><div class="note" style="background:var(--yel);border-color:#f1e2a6"><p><b>'+esc(L("disc"))+'</b></p></div>';
+  h+=sec(LI?"How to read the labels":"Як читати позначки")+'<div class="note"><p><span class="tag b">'+esc(L("kb"))+'</span> '+esc(LI?"Scripture itself. Ukrainian: a working translation made for this project, not an official edition. English: the World English Bible (public domain).":"Сам текст Писання. Українською — робочий переклад, зроблений для цього проєкту, а не офіційне видання. Англійською — World English Bible (суспільне надбання).")+'</p>'+
+    '<p><span class="tag q">'+esc(L("kq"))+'</span> '+esc(LI?"The speaker’s words in the original language.":"Слова проповідника мовою оригіналу.")+'</p><p><span class="tag r">'+esc(L("kr"))+'</span> '+esc(LI?"A retelling from a transcript, in our own words.":"Переказ за розшифровкою, своїми словами.")+'</p>'+
+    '<p><span class="tag t">'+esc(L("kt"))+'</span> '+esc(LI?"A thought that recurs across several sermons or broadcasts.":"Думка, яка повторюється в кількох проповідях чи ефірах.")+'</p><p><span class="tag a">'+esc(L("ka"))+'</span> '+esc(LI?"The project’s own study notes; not the pastor’s words.":"Власні навчальні нотатки проєкту; це не слова пастора.")+'</p>'+
+    '<p><span class="tag w">'+esc(L("kw"))+'</span> '+esc(LI?"No confirmed source yet — nothing is invented in its place.":"Підтвердженого джерела ще немає — замість нього нічого не вигадано.")+'</p></div>';
+  h+=sec(LI?"What this site is":"Що це за сайт")+'<p>'+esc(LI?"The site presents the teaching of Pastor Viktor Tomev (Worthy Life Church) as he himself explains it in sermons and in the “Questions and Answers” programme with Svitlana Tomev. It is one teacher’s reading of Scripture; you are warmly invited to open the Bible and examine every passage yourself.":"Сайт викладає вчення пастора Віктора Томєва (Worthy Life Church) так, як він сам пояснює його в проповідях і в програмі «Питання та відповіді» зі Світланою Томєвою. Це прочитання Писання одним учителем; щиро запрошуємо відкривати Біблію й досліджувати кожен текст самостійно.")+'</p>'+
+    '<p>'+esc(LI?"Retellings were made from transcripts of the recordings and have not been checked word for word against the videos. Sermon material is in Russian in the original; Ukrainian and English versions here are working retellings, not official translations.":"Перекази зроблено за розшифровками записів; дослівно з відео їх не звіряли. Проповіді в оригіналі звучать російською; українська й англійська версії тут — робочі перекази, а не офіційні переклади.")+'</p>';
+  h+=sec(LI?"Sources used":"Використані джерела")+'<ul class="pts">';for(k in DB.src)h+='<li><button class="srcbtn" data-a="src" data-p="'+k+'">'+esc(T(DB.src[k]))+'</button></li>';h+='</ul>';
+  h+=sec(LI?"Copyright":"Авторські права")+'<p>'+esc(LI?"Books by the project author are marked with their author. Full texts of sermons and of other people’s books are not reproduced. Music: only pieces generated by this page’s code or added by you with permission.":"Книги автора проєкту позначено його авторством. Повні тексти проповідей і чужих книг не відтворюються. Музика: лише п’єси, згенеровані кодом сторінки, або додані вами з дозволу.")+'</p>';
+  h+=sec(LI?"Data and offline use":"Дані та робота офлайн")+'<p>'+esc(LI?"Language, bookmarks, progress and everything added in the editor are stored in this browser only (localStorage). External videos and book pages need the internet. The site is one index.html file and can be hosted on itch.io or GitHub Pages.":"Мова, закладки, прогрес і все додане в редакторі зберігаються лише в цьому браузері (localStorage). Зовнішні відео й сторінки книг потребують інтернету. Сайт — один файл index.html; його можна розмістити на itch.io або GitHub Pages.")+'</p>';
+  return h;};
+
+/* ---------- editor ---------- */
+var ED = {
+book:["title_uk","title_en","author","cat:bcats","desc_uk:ta","desc_en:ta","link","text_uk:ta","text_en:ta"],
+sermon:["orig","title_uk","title_en","date:date","cat:cats","lang","refs","sum_uk:ta","sum_en:ta","pts_uk:ta","pts_en:ta","url"],
+qa:["title_uk","title_en","date:date","url","qs_uk:ta","qs_en:ta"],
+music:["title_uk","title_en","cat:mcats","lang","desc_uk:ta","desc_en:ta","url"],
+verse:["ref_uk","ref_en","vt_uk:ta","vt_en:ta","trl"]};
+var EDT = {book:"tBook",sermon:"tSermon",qa:"tQa",music:"tMusic",verse:"tVerse"};
+V.editor=function(){var h='<h1>✏️ '+esc(L("editor"))+'</h1><div class="note" style="background:var(--yel);border-color:#f1e2a6"><p>'+esc(L("edLead"))+'</p></div><div class="chips">',k,i,f,a,nm,ty,cur=null,val,o,list,it,ttl;
+  for(k in ED)h+='<button class="chip'+(S.edType===k?' on':'')+'" data-a="edtype" data-p="'+k+'">'+esc(L(EDT[k]))+'</button>';
+  h+='</div>';
+  if(S.edId)cur=byId(S.custom[S.edType],S.edId);
+  h+=sec((cur?L("edEdit"):L("edAdd"))+": "+L(EDT[S.edType]))+'<div id="edForm">';
+  f=ED[S.edType];
+  for(i=0;i<f.length;i++){a=f[i].split(":");nm=a[0];ty=a[1]||"";val=cur?(cur.raw[nm]||""):"";
+    h+='<label for="e_'+nm+'">'+esc(L("f_"+nm))+'</label>';
+    if(ty==="ta")h+='<textarea id="e_'+nm+'">'+esc(val)+'</textarea>';
+    else if(ty==="date")h+='<input type="date" id="e_'+nm+'" value="'+esc(val)+'">';
+    else if(ty){h+='<select id="e_'+nm+'">';for(o in DB[ty])h+='<option value="'+o+'"'+(val===o?' selected':'')+'>'+esc(T(DB[ty][o]))+'</option>';h+='</select>';}
+    else h+='<input type="text" id="e_'+nm+'" value="'+esc(val)+'">';}
+  h+='</div><button class="btn" data-a="edsave">'+esc(L("edSave"))+'</button>'+(cur?'<button class="btn ghost" data-a="edcancel">'+esc(L("edCancel"))+'</button>':'');
+  h+=sec(L("edMine"));list=S.custom[S.edType];
+  if(!list.length)h+='<div class="empty">'+esc(L("edNone"))+'</div>';
+  for(i=0;i<list.length;i++){it=list[i];ttl=it.raw.title_uk||it.raw.title_en||it.raw.orig||it.raw.ref_uk||it.raw.ref_en||it.id;
+    h+='<div class="card"><h3>'+esc(ttl)+'</h3><button class="btn ghost sm" data-a="ededit" data-p="'+esc(it.id)+'">'+esc(L("edEdit"))+'</button><button class="btn ghost sm" data-a="eddel" data-p="'+esc(it.id)+'">'+esc(L("edDel"))+'</button></div>';}
+  h+=sec(L("exp"))+'<label style="font-weight:400"><input type="checkbox" id="xState"> '+esc(L("withState"))+'</label><div><button class="btn" data-a="export">'+esc(L("expBtn"))+'</button><button class="btn ghost" data-a="expcopy">'+esc(L("expCopy"))+'</button></div>'+
+    '<textarea id="xBox" placeholder="JSON"></textarea><div><button class="btn ghost" data-a="import">'+esc(L("impBtn"))+'</button><label class="btn ghost" style="display:inline-flex;color:var(--sky-d)">'+esc(L("impFile"))+'<input type="file" id="xFile" accept=".json,application/json" style="display:none"></label></div>';
+  return h;};
+function exportObj(withState){var o={app:"eternal-life-in-grace",v:1,exported:new Date().toISOString(),custom:S.custom};if(withState)o.state={bm:S.bm,prog:S.prog,pos:S.pos};return o;}
+function importObj(o,withState){if(!o||o.app!=="eternal-life-in-grace"||!o.custom)return -1;var n=0,k,i,j,arr,x,f;
+  for(k in S.custom){arr=o.custom[k];if(!arr||!arr.length)continue;
+    for(i=0;i<arr.length;i++){x=arr[i];if(!x||!x.id||!x.raw)continue;f=false;
+      for(j=0;j<S.custom[k].length;j++)if(S.custom[k][j].id===x.id){S.custom[k][j]=x;f=true;}
+      if(!f)S.custom[k].push(x);n++;}}
+  store.set("custom",S.custom);
+  if(withState&&o.state){S.bm=o.state.bm||S.bm;S.prog=o.state.prog||S.prog;S.pos=o.state.pos||S.pos;store.set("bm",S.bm);store.set("prog",S.prog);store.set("pos",S.pos);}
+  return n;}
+
+/* ---------- music ---------- */
+var PL={id:null,ctx:null,tm:null,master:null,audio:null,step:0};
+function stopPlay(){if(PL.tm){clearInterval(PL.tm);PL.tm=null;}
+  if(PL.master&&PL.ctx){try{PL.master.gain.setTargetAtTime(0,PL.ctx.currentTime,0.15);}catch(e){}}
+  if(PL.audio){try{PL.audio.pause();}catch(e2){}PL.audio=null;}PL.id=null;}
+function tone(freq,dur,vol,wave){var c=PL.ctx,o=c.createOscillator(),g=c.createGain(),t=c.currentTime;o.type=wave;o.frequency.value=freq;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+0.06);g.gain.exponentialRampToValueAtTime(0.0008,t+dur);o.connect(g);g.connect(PL.master);o.start(t);o.stop(t+dur+0.05);}
+function startGen(m){var AC=window.AudioContext||window.webkitAudioContext;if(!AC){toast(L("audioErr"));return false;}
+  if(!PL.ctx)PL.ctx=new AC();if(PL.ctx.state==="suspended")PL.ctx.resume();
+  PL.master=PL.ctx.createGain();PL.master.gain.value=0.16;PL.master.connect(PL.ctx.destination);PL.step=0;
+  var g=m.gen,pat=[0,2,4,2,5,4,2,1,3,5,7,5,4,2,3,1];
+  function tick(){var s=PL.step++,idx=pat[s%pat.length],f;
+    if(Math.random()<0.25)idx=Math.floor(Math.random()*g.scale.length);if(idx>=g.scale.length)idx=g.scale.length-1;
+    f=g.root*Math.pow(2,g.scale[idx]/12);
+    if(s%8!==7)tone(f,2.2,0.5,g.wave);
+    if(s%4===0){tone(g.root/2,3.6,0.35,"sine");tone(g.root/2*Math.pow(2,7/12),3.6,0.18,"sine");}
+    if(s%8===4)tone(f*2,1.6,0.12,"sine");}
+  tick();PL.tm=setInterval(tick,g.beat);return true;}
+function playTrack(id){var m=byId(allMusic(),id);if(!m)return;
+  if(PL.id===id){stopPlay();render(true);return;}
+  stopPlay();
+  if(m.gen){if(startGen(m))PL.id=id;}
+  else if(m.url){try{PL.audio=new Audio(m.url);PL.audio.onerror=function(){toast(L("audioErr"));stopPlay();render(true);};PL.audio.onended=function(){stopPlay();render(true);};
+      var pr=PL.audio.play();if(pr&&pr.catch)pr.catch(function(){toast(L("audioErr"));stopPlay();render(true);});PL.id=id;}catch(e){toast(L("audioErr"));}}
+  else toast(L("soon"));
+  render(true);}
+
+/* ---------- actions ---------- */
+function copyText(t){function fb(){try{var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);toast(ok?L("copied"):L("copyFail"));}catch(e){toast(L("copyFail"));}}
+  try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast(L("copied"));},fb);}else fb();}catch(e){fb();}}
+var resetArm=0;
+var ACT = {
+go:function(p){go(p,null);},golast:function(){if(S.last)go(S.last[0],S.last[1]);},
+book:function(p){go("book",p);},read:function(p){go("read",p);},sermon:function(p){go("sermon",p);},qaitem:function(p){go("qaitem",p);},ftopic:function(p){go("ftopic",p);},
+study:function(p){go("study",p);},lawitem:function(p){go("lawitem",p);},lesson:function(p){go("lesson",p);},verse:function(p){go("verse",p);},
+src:function(p){if(byId(allSermons(),p))go("sermon",p);else if(byId(allQa(),p))go("qaitem",p);else go("about",null);},
+bm:function(p,node){if(S.bm[p])delete S.bm[p];else S.bm[p]=1;store.set("bm",S.bm);node.className="star"+(S.bm[p]?" on":"");node.textContent=S.bm[p]?"★":"☆";},
+copyv:function(p){var v=allVerses()[p];if(v)copyText(T(v.t)+" — "+T(v.ref));},
+copysel:function(p){var s="";try{s=String(window.getSelection());}catch(e){}s=s.replace(/^\s+|\s+$/g,"");if(!s){toast(L("selFirst"));return;}if(s.length>600)s=s.slice(0,600)+"…";var b=byId(allBooks(),p);copyText("«"+s+"» — "+(b?T(b.title):""));},
+fs:function(p){S.fs=Math.max(0,Math.min(FS.length-1,S.fs+parseInt(p,10)));store.set("fs",S.fs);applyPrefs();},
+paper:function(){S.paper=!S.paper;store.set("paper",S.paper);render(true);},
+calm:function(){S.calm=!S.calm;store.set("calm",S.calm);applyPrefs();render(true);},
+reset:function(p,node){if(Date.now()-resetArm>4000){resetArm=Date.now();toast(L("sure"));return;}resetArm=0;S.bm={};S.prog={};S.pos={};S.last=null;store.set("bm",S.bm);store.set("prog",S.prog);store.set("pos",S.pos);store.set("last",null);toast(L("resetOk"));},
+lbcat:function(p){S.lbCat=p;render(true);},scat:function(p){S.sCat=p;render(true);},srtype:function(p){S.srType=p;render(true);},
+flip:function(p,node){var on=node.className.indexOf(" on")>=0;node.className="flip"+(on?"":" on");node.querySelector("small").textContent=on?L("tapFlip"):L("answer");node.querySelector("span").textContent=on?node.getAttribute("data-f"):node.getAttribute("data-b");},
+self:function(p,node){var a=p.split("|"),box=node.parentNode,bs=box.querySelectorAll(".opt"),i;for(i=0;i<bs.length;i++){bs[i].className="opt"+(bs[i].getAttribute("data-p").split("|")[1]==="0"?" ok":(bs[i]===node?" no":""));}},
+qsel:function(p,node){if(QZ.checked)return;var a=p.split("|"),bs=node.parentNode.querySelectorAll(".opt"),i;for(i=0;i<bs.length;i++)bs[i].className="opt";node.className="opt sel";QZ.sel[a[0]]=a[1];},
+qcheck:function(p,node){var l=byId(DB.lessons,QZ.id),n=l.quiz.length,i,sc=0,boxes,bs,j,v,pr;
+  if(QZ.checked){go("lesson",QZ.id,true);el("scroll").scrollTop=el("quiz").offsetTop-10;return;}
+  for(i=0;i<n;i++)if(QZ.sel[i]==null){toast(L("ansAll"));return;}
+  boxes=el("quiz").querySelectorAll(".qz");
+  for(i=0;i<n;i++){if(QZ.sel[i]==="0")sc++;bs=boxes[i].querySelectorAll(".opt");for(j=0;j<bs.length;j++){v=bs[j].getAttribute("data-p").split("|")[1];bs[j].className="opt"+(v==="0"?" ok":(v===QZ.sel[i]?" no":""));}}
+  QZ.checked=true;pr=S.prog[QZ.id]||{best:0,done:false};if(sc>pr.best)pr.best=sc;if(sc>=4)pr.done=true;S.prog[QZ.id]=pr;store.set("prog",S.prog);
+  el("qres").innerHTML='<div class="note" style="background:'+(sc>=4?'var(--green-l)':'var(--yel)')+'"><p><b>'+esc(L("score"))+': '+sc+' / '+n+'</b></p><p>'+esc(sc>=4?L("passed"):L("retry"))+'</p></div>';
+  node.textContent=L("again");},
+play:function(p){playTrack(p);},
+edtype:function(p){S.edType=p;S.edId=null;render(true);},
+ededit:function(p){S.edId=p;render(true);el("scroll").scrollTop=0;},
+edcancel:function(){S.edId=null;render(true);},
+eddel:function(p){var a=S.custom[S.edType],i;for(i=0;i<a.length;i++)if(a[i].id===p){a.splice(i,1);break;}if(S.edId===p)S.edId=null;store.set("custom",S.custom);toast(L("deleted"));render(true);},
+edsave:function(){var f=ED[S.edType],raw={},i,nm,n,cur;for(i=0;i<f.length;i++){nm=f[i].split(":")[0];n=el("e_"+nm);raw[nm]=n?n.value:"";}
+  if(!(raw.title_uk||raw.title_en||raw.orig||raw.ref_uk||raw.ref_en)){toast(L("needTitle"));return;}
+  if(S.edId&&(cur=byId(S.custom[S.edType],S.edId)))cur.raw=raw;else S.custom[S.edType].push({id:"c_"+S.edType+"_"+Date.now().toString(36),raw:raw});
+  S.edId=null;store.set("custom",S.custom);toast(L("saved"));render(true);},
+"export":function(){var txt=JSON.stringify(exportObj(el("xState").checked),null,2);el("xBox").value=txt;
+  try{var b=new Blob([txt],{type:"application/json"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="eternal-life-in-grace-catalog.json";document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(u);},2000);}catch(e){}
+  toast(L("saved"));},
+expcopy:function(){var txt=JSON.stringify(exportObj(el("xState").checked),null,2);el("xBox").value=txt;copyText(txt);},
+"import":function(){doImport(el("xBox").value);}
+};
+function doImport(txt){var o=null,n;try{o=JSON.parse(txt);}catch(e){}n=importObj(o,el("xState")&&el("xState").checked);if(n<0){toast(L("impBad"));return;}toast(L("impOk")+": "+n);render(true);}
+
+/* ---------- render & navigation ---------- */
+function bindAll(root){var ns=root.querySelectorAll("[data-a]"),i;
+  for(i=0;i<ns.length;i++)(function(node){node.addEventListener("click",function(ev){if(node.disabled)return;var f=ACT[node.getAttribute("data-a")];if(f){ev.preventDefault();f(node.getAttribute("data-p"),node);}});})(ns[i]);}
+function fillList(){var l=el("list");if(!l)return;
+  l.innerHTML=S.view==="lib"?libList():S.view==="serm"?sermList():S.view==="qa"?qaList():S.view==="search"?searchList():"";bindAll(l);}
+function wireInputs(){var n;
+  if((n=el("fLib")))n.addEventListener("input",function(){S.sTxt2=this.value;fillList();});
+  if((n=el("fSerm")))n.addEventListener("input",function(){S.sTxt=this.value;fillList();});
+  if((n=el("fQa")))n.addEventListener("input",function(){S.qTxt=this.value;fillList();});
+  if((n=el("fSearch")))n.addEventListener("input",function(){S.srch=this.value;fillList();});
+  if((n=el("fLang")))n.addEventListener("change",function(){S.srLang=this.value;fillList();});
+  if((n=el("xFile")))n.addEventListener("change",function(){var f=this.files&&this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){doImport(String(r.result));};r.readAsText(f);});}
+function chrome(){var nb={home:"nHome",lib:"nLib",school:"nSchool",search:"nSearch",more:"nMore"},grp={book:"lib",read:"lib",lesson:"school"},bs=el("bnav").querySelectorAll("button"),i,k,cur=grp[S.view]||S.view;
+  if(!nb[cur]&&S.view!=="home")cur="more";
+  for(i=0;i<bs.length;i++){k=bs[i].getAttribute("data-nav");bs[i].querySelector("span").textContent=L(nb[k]);bs[i].className=k===cur?"on":"";}
+  el("brandA").textContent=I.brandA[LI];el("brandB").textContent=I.brandB[LI];
+  el("lgUk").className=LI===0?"on":"";el("lgEn").className=LI===1?"on":"";
+  el("backBtn").style.display=S.hist.length?"":"none";
+  document.documentElement.lang=LI?"en":"uk";
+  document.title=LI?"Eternal Life in Grace":"Вічне життя в благодаті";}
+function render(keep){var sc=el("scroll"),y=sc.scrollTop,f=V[S.view]||V.home;
+  el("view").innerHTML=f(S.param)+'<div class="foot">'+esc(L("disc"))+'</div>';
+  bindAll(el("view"));wireInputs();fillList();chrome();
+  sc.scrollTop=keep?y:0;}
+function go(view,param,replace){
+  if(!replace&&(view!==S.view||param!==S.param)){S.hist.push([S.view,S.param,el("scroll").scrollTop]);if(S.hist.length>40)S.hist.shift();}
+  S.view=view;S.param=param;render(false);
+  if(view==="read"){var a=String(param).split("|"),p=S.pos[a[0]];var cn=parseInt(a[1],10)||0;if(p&&p.ch===cn&&p.y)el("scroll").scrollTop=p.y;else{S.pos[a[0]]={ch:cn,y:0};store.set("pos",S.pos);}}}
+function back(){var h=S.hist.pop();if(!h){go("home",null,true);return;}S.view=h[0];S.param=h[1];render(false);el("scroll").scrollTop=h[2]||0;}
+function applyPrefs(){document.documentElement.style.setProperty("--fs",FS[S.fs]+"px");document.body.className=S.calm?"calm":"";}
+function setLang(i){LI=i;store.set("lang",i?"en":"uk");render(true);}
+
+(function init(){
+  var lg=store.get("lang",null),sp=el("scroll"),tmr=null,bs,i;
+  if(lg==null){lg=(navigator.language||"uk").toLowerCase().indexOf("uk")===0||(navigator.language||"").toLowerCase().indexOf("ru")===0?"uk":(/^en/i.test(navigator.language||"")?"en":"uk");}
+  LI=lg==="en"?1:0;
+  S.fs=store.get("fs",1);S.calm=store.get("calm",false);S.paper=store.get("paper",false);S.bm=store.get("bm",{})||{};S.prog=store.get("prog",{})||{};S.pos=store.get("pos",{})||{};S.last=store.get("last",null);
+  var c=store.get("custom",null),k;if(c){for(k in S.custom)if(c[k]&&c[k].length!=null)S.custom[k]=c[k];}
+  applyPrefs();
+  el("lgUk").addEventListener("click",function(){setLang(0);});
+  el("lgEn").addEventListener("click",function(){setLang(1);});
+  el("brandBtn").addEventListener("click",function(){go("home",null);});
+  el("backBtn").addEventListener("click",function(){back();});
+  bs=el("bnav").querySelectorAll("button");
+  for(i=0;i<bs.length;i++)(function(b){b.addEventListener("click",function(){S.hist=[];go(b.getAttribute("data-nav"),null,true);});})(bs[i]);
+  sp.addEventListener("scroll",function(){if(S.view!=="read")return;if(tmr)return;tmr=setTimeout(function(){tmr=null;if(S.view!=="read")return;var a=String(S.param).split("|");S.pos[a[0]]={ch:parseInt(a[1],10)||0,y:sp.scrollTop};store.set("pos",S.pos);},400);});
+  render(false);
+})();
+
+</script>
+</body>
+</html>
